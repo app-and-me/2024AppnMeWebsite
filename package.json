@@ -1,0 +1,10 @@
+{
+  "name": "2024 AnM Website",
+  "description": "Website for promotion and club membership",
+  "version": "0.0.1",
+  "author": "Hwang Hyekyung",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  }
+}
