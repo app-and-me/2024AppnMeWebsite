@@ -29,11 +29,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // public 폴더를 정적 파일 제공을 위한 미들웨어로 설정
 app.use(express.static(path.join(__dirname, 'public')));
 
-// 입력한 정보 디비에 들어가도록 설계
+// 학생 정보 등록 API
 app.post('/students', (req, res) => {
   const student = req.body;
 
-  // student_id 필드를 사용하지 않도록 수정
   const { student_id, ...studentData } = student;
 
   db.query('INSERT INTO students SET ?', studentData, (err, result) => {
@@ -46,22 +45,43 @@ app.post('/students', (req, res) => {
   });
 });
 
-// HTML 폼 라우트
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+// 학생 정보 조회 API
+app.get('/students', (req, res) => {
+  db.query('SELECT * FROM students', (err, results) => {
+    if (err) {
+      console.error('MySQL query error:', err);
+      res.status(500).json({ error: '학생 정보를 불러오지 못했습니다!!' });
+    } else {
+      res.status(200).json(results);
+    }
+  });
 });
 
-//입력한 정보 갖고오는 api
-app.get('/students', (req, res) => {
-    db.query('SELECT * FROM students', (err, results) => {
-        if (err) {
-          console.error('MySQL query error:', err);
-          res.status(500).json({ error: '학생 정보를 불러오지 못했습니다!!' });
-        } else {
-          res.status(200).json(results);
-        }
-      });
-    });
+// 새로운 메시지 등록 API
+app.post('/messages', (req, res) => {
+  const message = req.body;
+
+  db.query('INSERT INTO qna SET ?', message, (err, result) => {
+    if (err) {
+      console.error('MySQL query error:', err);
+      res.status(500).json({ error: '메시지가 등록되지 못했습니다!!' });
+    } else {
+      res.status(201).json({ message: '메시지가 성공적으로 등록되었습니다!!' });
+    }
+  });
+});
+
+// 메시지 조회 API
+app.get('/messages', (req, res) => {
+  db.query('SELECT * FROM qna', (err, results) => {
+    if (err) {
+      console.error('MySQL query error:', err);
+      res.status(500).json({ error: '메시지를 불러오지 못했습니다!!' });
+    } else {
+      res.status(200).json(results);
+    }
+  });
+});
 
 // 서버 시작
 app.listen(port, () => {
