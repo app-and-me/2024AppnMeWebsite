@@ -1,10 +1,16 @@
 {
-  "name": "2024 AnM Website",
-  "description": "Website for promotion and club membership",
-  "version": "0.0.1",
-  "author": "Hwang Hyekyung",
+  "name": "2024anm-website",
+  "version": "1.0.0",
+  "description": "> 앱앤미 11기, 12기가 참여한 동아리 홍보 웹사이트 입니다. 13기 지원 및, QnA 게시판을 운영합니다 🙂",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mysql2": "^3.6.5"
   }
 }
