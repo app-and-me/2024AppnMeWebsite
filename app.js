@@ -6,21 +6,9 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 
-// MySQL 연결 설정
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '0000',
-  database: 'website'
-});
+// db
+const db = require('./database/database');
 
-db.connect((err) => {
-  if (err) {
-    console.error('MySQL 연결 에러가 났습니다!:', err);
-  } else {
-    console.log('MySQL 연결이 되었습니다!');
-  }
-});
 
 // body-parser 설정
 app.use(bodyParser.json());
