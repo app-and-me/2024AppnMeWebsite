@@ -20,8 +20,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // 라우터 추가
-const indexRouter = require('./routes/index');
+const indexRouter = require('./routes/index');              // 인덱스
+const membersRouter = require('./routes/members');          // 부원 소개
+const applicationRouter = require('./routes/application');  // 지원하기
+const qnaRouter = require('./routes/qna');                   // QnA
+const recordsRouter = require('./routes/records');          // 활동 기록
 app.use('/', indexRouter);
+app.use('/members', membersRouter);
+app.use('/application', applicationRouter);
+app.use('/qna', qnaRouter);
+app.use('/records', recordsRouter);
 
 // 학생 정보 등록 API
 app.post('/students', (req, res) => {
