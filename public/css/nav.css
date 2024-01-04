@@ -1,0 +1,34 @@
+#header {
+    position: fixed;
+    padding: 0 15vw;
+    width: 100%;
+    height: fit-content;
+}
+
+#nav {
+    width: 70vw;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav-menu {
+    display: flex;
+    gap: 6rem;
+}
+
+.nav-item {
+    font-size: 0.9rem;
+}
+
+#nav-logo {
+    width: 24px;
+    height: 24px;
+}
+
+#nav-logo > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
