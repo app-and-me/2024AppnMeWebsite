@@ -6,16 +6,19 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 
+// EJS를 템플릿 엔진
+app.set('view engine', 'ejs');
+
 // db
 const db = require('./database/database');
-
 
 // body-parser 설정
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// public 폴더를 정적 파일 제공을 위한 미들웨어로 설정
-app.use(express.static(path.join(__dirname, 'public')));
+// 라우터 추가
+const indexRouter = require('./routes/index');
+app.use('/', indexRouter);
 
 // 학생 정보 등록 API
 app.post('/students', (req, res) => {
