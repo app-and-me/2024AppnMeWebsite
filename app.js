@@ -9,6 +9,9 @@ const port = 3000;
 // EJS를 템플릿 엔진
 app.set('view engine', 'ejs');
 
+// 정적 파일 제공 설정
+app.use(express.static(path.join(__dirname, 'public')));
+
 // db
 const db = require('./database/database');
 
