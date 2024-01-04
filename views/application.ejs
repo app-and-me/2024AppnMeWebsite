@@ -10,6 +10,7 @@
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/application.css">
 </head>
 
 <body>
@@ -26,6 +27,53 @@
             </div>
         </nav>
     </header>
+
+    <main id="main">
+        <section id="top-section">
+            <iconify-icon icon="charm:arrow-left" class="prev-icon"></iconify-icon>
+            <h1 class="main-title">
+                2024 앱앤미 부원을 <br>
+                모집합니다!
+            </h1>
+            <h6 class="sub-title">앱앤미가 여러분을 기다리고 있습니다!!</h6>
+            <hr class="divide-line">
+        </section>
+        <section id="main-section">
+            <form action="/submit" method="post">
+                <div class="input-container">
+                    <label for="student_id">
+                        학번 
+                        <div class="asterisk">*</div>
+                    </label>
+                    <input type="text" name="student_id" id="student_id" class="text-field" placeholder="ex) 1101">
+                </div>
+                <div class="input-container">
+                    <label for="name">
+                        이름
+                        <div class="asterisk">*</div>
+                    </label>
+                    <input type="text" name="name" id="name" class="text-field" placeholder="ex) 김미림">
+                </div>
+                <div class="input-container">
+                    <label for="five_characters_representation">
+                        나를 다섯 글자로 표현한다면?
+                        <div class="asterisk">*</div>
+                    </label>
+                    <input type="text" name="five_characters_representation" id="five_characters_representation" class="text-field" placeholder="ex) 열정만수르">
+                </div>
+                <div class="input-container">
+                    <label for="application_motivation">
+                        지원동기
+                        <div class="asterisk">*</div>
+                    </label>
+                    <textarea name="application_motivation" id="application_motivation" class="text-field" placeholder="300자 이내로 작성해주세요."></textarea>
+                </div>
+                <input type="submit" value="지원하기" class="main-button">
+            </form>
+        </section>
+    </main>
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </body>
 
 </html>
