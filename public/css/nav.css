@@ -1,8 +1,11 @@
 #header {
     position: fixed;
+    top: 0;
+    left: 0;
     padding: 0 15vw;
     width: 100%;
-    height: fit-content;
+    height: 100px;
+    background-color: var(--white);
 }
 
 #nav {
