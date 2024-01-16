@@ -35,7 +35,11 @@ app.use('/records', recordsRouter);
 app.post('/students', (req, res) => {
   const student = req.body;
 
-  const { student_id, ...studentData } = student;
+  // student_id가 없다면 기본값으로 설정
+  const student_id = student.student_id || 'DefaultStudentID';
+
+  // 학번 데이터를 가져와서 student_id에 넣기
+  const studentData = { ...student, student_id };
 
   db.query('INSERT INTO students SET ?', studentData, (err, result) => {
     if (err) {
@@ -46,6 +50,7 @@ app.post('/students', (req, res) => {
     }
   });
 });
+
 
 // 학생 정보 조회 API
 app.get('/students', (req, res) => {
@@ -115,6 +120,19 @@ app.post('/messages/:id/replies', (req, res) => {
       }
     });
   });
+
+ // 학생 정보 조회 페이지 라우터
+  app.get('/students-list', (req, res) => {
+    db.query('SELECT * FROM students', (err, results) => {
+      if (err) {
+        console.error('MySQL query error:', err);
+        res.status(500).send('Internal Server Error');
+      } else {
+        res.render('students', { students: results });
+      }
+    });
+  });
+
   
 // 서버 시작
 app.listen(port, () => {
