@@ -1,0 +1,51 @@
+<!-- views/students.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생 정보</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+            margin: 0;
+        }
+        strong {
+            display: inline-block;
+            width: 120px;
+            font-weight: bold;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>학생 정보</h1>
+    <ul>
+        <% students.forEach(student => { %>
+            <li>
+                <strong>ID:</strong> <%= student.id %><br>
+                <strong>이름:</strong> <%= student.name %><br>
+                <strong>학번:</strong> <%= student.student_id %><br>
+                <strong>전화번호:</strong> <%= student.phone_number %><br>
+                <strong>다섯 글자:</strong> <%= student.five_characters_representation %><br>
+                <strong>지원 동기:</strong> <%= student.application_motivation %><br>
+                <strong>기숙사 여부:</strong> <%= student.dormitory_resident ? '기숙사 거주' : '기숙사 미거주' %><br>
+                <strong>성별:</strong> <%= student.gender %>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>

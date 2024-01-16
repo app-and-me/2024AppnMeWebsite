@@ -115,6 +115,19 @@ app.post('/messages/:id/replies', (req, res) => {
       }
     });
   });
+
+ // 학생 정보 조회 페이지 라우터
+  app.get('/students-list', (req, res) => {
+    db.query('SELECT * FROM students', (err, results) => {
+      if (err) {
+        console.error('MySQL query error:', err);
+        res.status(500).send('Internal Server Error');
+      } else {
+        res.render('students', { students: results });
+      }
+    });
+  });
+
   
 // 서버 시작
 app.listen(port, () => {
