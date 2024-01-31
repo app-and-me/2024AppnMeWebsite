@@ -10,6 +10,7 @@
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/application.css">
 </head>
 
@@ -42,10 +43,11 @@
             <form action="/submit" method="post">
                 <div class="input-container">
                     <label for="student_id">
-                        학번 
+                        학번
                         <div class="asterisk">*</div>
                     </label>
-                    <input type="text" name="student_id" id="student_id" class="text-field" placeholder="ex) 1101">
+                    <input type="text" name="student_id" id="student_id" class="text-field"
+                        oninput="this.value = this.value.replace(/[^0-9]/g, '');" placeholder="ex) 1101" autofocus>
                 </div>
                 <div class="input-container">
                     <label for="name">
@@ -54,25 +56,82 @@
                     </label>
                     <input type="text" name="name" id="name" class="text-field" placeholder="ex) 김미림">
                 </div>
+                <div id="input-with-radio">
+                    <div class="input-container">
+                        <label for="name">
+                            전화번호
+                            <div class="asterisk">*</div>
+                        </label>
+                        <input type="text" name="name" id="name" class="text-field"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '');" placeholder="ex) 01012345678">
+                    </div>
+                    <div class="input-container">
+                        <label for="gender">성별</label>
+                        <div class="radio-container">
+                            <div class="radio-item">
+                                <input type="radio" name="gender" value="male" checked />
+                                <span>남</span>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" name="gender" value="female" />
+                                <span>여</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <label for="gender">기숙사 여부</label>
+                        <div class="radio-container">
+                            <div class="radio-item">
+                                <input type="radio" name="domitori" value="male" checked />
+                                <span>기숙사생</span>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" name="domitori" value="female" />
+                                <span>통학생</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="input-container">
                     <label for="five_characters_representation">
                         나를 다섯 글자로 표현한다면?
                         <div class="asterisk">*</div>
                     </label>
-                    <input type="text" name="five_characters_representation" id="five_characters_representation" class="text-field" placeholder="ex) 열정만수르">
+                    <input type="text" name="five_characters_representation" id="five_characters_representation"
+                        class="text-field" placeholder="ex) 열정만수르">
                 </div>
                 <div class="input-container">
                     <label for="application_motivation">
                         지원동기
                         <div class="asterisk">*</div>
                     </label>
-                    <textarea name="application_motivation" id="application_motivation" class="text-field" placeholder="300자 이내로 작성해주세요."></textarea>
+                    <textarea name="application_motivation" id="application_motivation" class="text-field"
+                        maxlength="300" placeholder="300자 이내로 작성해주세요."></textarea>
                 </div>
                 <input type="submit" value="지원하기" class="main-button">
             </form>
         </section>
     </main>
 
+    <footer id="footer">
+        <div class="logos">
+            <div class="anm-logo">
+                <img src="/images/logo.png" alt="앱앤미로고">
+                <span>App&Me</span>
+            </div>
+            <div class="sns-logo">
+                <a href="https://www.instagram.com/app_and_me/">
+                    <img src="/images/instagram.png" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="info">
+            <div>문의전화: 010-0000-0000</div>
+            <div>이메일 : w2218@e-mirim.hs.kr</div>
+        </div>
+        <hr>
+        <div class="code">©Team App&Me</div>
+    </footer>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </body>
 

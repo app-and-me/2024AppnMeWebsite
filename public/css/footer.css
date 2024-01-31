@@ -1,0 +1,57 @@
+#footer {
+    padding: 56px 15vw;
+    background-color: var(--gray-200);
+}
+
+#footer img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.logos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.anm-logo {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.anm-logo span {
+    color: var(--primary, #FF8DAF);
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.info {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.info > div {
+    color: var(--gray-800, #575757);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+}
+
+#footer hr {
+    margin: 2rem 0;
+    width: 100%;
+    color: var(--gray-700);
+    border: 0.4px solid;
+}
+
+.code {
+    text-align: center;
+    color: #616161;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+}
