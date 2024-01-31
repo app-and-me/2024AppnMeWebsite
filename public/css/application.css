@@ -35,7 +35,7 @@
 }
 
 #main-section {
-    margin: 67px 15vw 0 15vw;
+    margin: 67px 15vw 6vh 15vw;
 }
 
 form {
@@ -91,7 +91,43 @@ textarea {
     transition: 0.2s;
 }
 
+#input-with-radio {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#input-with-radio .input-container {
+    margin-right: 4vw;
+}
+#input-with-radio input[type="text"] {
+    width: 33vw;
+}
 .main-button:hover {    
     background-color: var(--primary-500);
     color: var(--white);
+}
+
+.radio-container {
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+    width: fit-content;
+    height: 42px;
+}
+
+[type="radio"] {
+    vertical-align: middle;
+    appearance: none;
+    border-radius: 50%;
+    width: 1.25em;
+    height: 1.25em;
+    background-color: var(--gray-200);
+    transition: border 0.4s ease-in-out;
+}
+
+[type="radio"]:checked {
+    border: 0.25em solid var(--gray-200);
+    background-color: var(--primary-500);
 }
