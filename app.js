@@ -23,12 +23,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const indexRouter = require('./routes/index');              // 인덱스
 const membersRouter = require('./routes/members');          // 부원 소개
 const applicationRouter = require('./routes/application');  // 지원하기
-const qnaRouter = require('./routes/qna');                   // QnA
+const boardRouter = require('./routes/board');                   // QnA
 const recordsRouter = require('./routes/records');          // 활동 기록
 app.use('/', indexRouter);
 app.use('/members', membersRouter);
 app.use('/application', applicationRouter);
-app.use('/qna', qnaRouter);
+app.use('/board', boardRouter);
 app.use('/records', recordsRouter);
 
 // 학생 정보 등록 API
