@@ -3,13 +3,13 @@ const router = express.Router();
 
 // application html 페이지 렌더링
 router.get('/', (req, res) => {
-    res.render('application');
+    res.render('application/application');
 });
 
 // 지원 성공 시 html 페이지 렌더링
 
 router.get('/success', (req, res) => {
-    res.render('success_apply')
+    res.render('application/success_apply')
 });
 
 
