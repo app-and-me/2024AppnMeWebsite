@@ -25,115 +25,19 @@ const membersRouter = require('./routes/members');          // 부원 소개
 const applicationRouter = require('./routes/application');  // 지원하기
 const boardRouter = require('./routes/board');                   // QnA
 const recordsRouter = require('./routes/records');          // 활동 기록
+const studentsRouter = require('./routes/students');   
+const messagesRouter = require('./routes/messages');     
+const studentsListRouter = require('./routes/students-list');
 app.use('/', indexRouter);
 app.use('/members', membersRouter);
 app.use('/application', applicationRouter);
 app.use('/board', boardRouter);
 app.use('/records', recordsRouter);
+app.use('/', indexRouter);
+app.use('/students', studentsRouter);
+app.use('/messages', messagesRouter);
+app.use('/students-list', studentsListRouter);
 
-// 학생 정보 등록 API
-app.post('/students', (req, res) => {
-  const student = req.body;
-
-  // student_id가 없다면 기본값으로 설정
-  const student_id = student.student_id || 'DefaultStudentID';
-
-  // 학번 데이터를 가져와서 student_id에 넣기
-  const studentData = { ...student, student_id };
-
-  db.query('INSERT INTO students SET ?', studentData, (err, result) => {
-    if (err) {
-      console.error('MySQL query error:', err);
-      res.status(500).json({ error: '학생 정보가 들어가지 못했습니다!!' });
-    } else {
-      res.status(201).json({ message: '학생 정보가 성공적으로 들어갔습니다!!' });
-    }
-  });
-});
-
-
-// 학생 정보 조회 API
-app.get('/students', (req, res) => {
-  db.query('SELECT * FROM students', (err, results) => {
-    if (err) {
-      console.error('MySQL query error:', err);
-      res.status(500).json({ error: '학생 정보를 불러오지 못했습니다!!' });
-    } else {
-      res.status(200).json(results);
-    }
-  });
-});
-
-// 새로운 메시지 등록 API
-app.post('/messages', (req, res) => {
-  const message = req.body;
-
-  db.query('INSERT INTO qna SET ?', message, (err, result) => {
-    if (err) {
-      console.error('MySQL query error:', err);
-      res.status(500).json({ error: '메시지가 등록되지 못했습니다!!' });
-    } else {
-      res.status(201).json({ message: '메시지가 성공적으로 등록되었습니다!!' });
-    }
-  });
-});
-
-// 메시지 조회 API
-app.get('/messages', (req, res) => {
-  db.query('SELECT * FROM qna', (err, results) => {
-    if (err) {
-      console.error('MySQL query error:', err);
-      res.status(500).json({ error: '메시지를 불러오지 못했습니다!!' });
-    } else {
-      res.status(200).json(results);
-    }
-  });
-});
-
-// 메시지 답변 등록 API
-app.post('/messages/:id/replies', (req, res) => {
-    const messageId = req.params.id;
-    const replyText = req.body.reply_text;
-  
-    if (!messageId || !replyText) {
-      return res.status(400).json({ error: '메시지 ID와 답변 내용을 모두 제공해야 합니다.' });
-    }
-  
-    db.query('INSERT INTO message_replies (message_id, reply_text) VALUES (?, ?)', [messageId, replyText], (err, result) => {
-      if (err) {
-        console.error('MySQL query error:', err);
-        res.status(500).json({ error: '메시지 답변을 등록하지 못했습니다.' });
-      } else {
-        res.status(201).json({ message: '메시지 답변이 성공적으로 등록되었습니다.' });
-      }
-    });
-  });
-  
-  // 메시지 및 답변 조회 API
-  app.get('/messages-with-replies', (req, res) => {
-    db.query('SELECT qna.*, message_replies.reply_text, message_replies.reply_time FROM qna LEFT JOIN message_replies ON qna.id = message_replies.message_id', (err, results) => {
-      if (err) {
-        console.error('MySQL query error:', err);
-        res.status(500).json({ error: '메시지 및 답변을 불러오지 못했습니다.' });
-      } else {
-        res.status(200).json(results);
-      }
-    });
-  });
-
- // 학생 정보 조회 페이지 라우터
-  app.get('/students-list', (req, res) => {
-    db.query('SELECT * FROM students', (err, results) => {
-      if (err) {
-        console.error('MySQL query error:', err);
-        res.status(500).send('Internal Server Error');
-      } else {
-        res.render('students', { students: results });
-      }
-    });
-  });
-
-  
 // 서버 시작
 app.listen(port, () => {
   console.log(`http://localhost:${port}`);
