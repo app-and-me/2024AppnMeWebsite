@@ -34,9 +34,9 @@ app.use('/application', applicationRouter);
 app.use('/board', boardRouter);
 app.use('/records', recordsRouter);
 app.use('/', indexRouter);
-app.use('/students', studentsRouter);
-app.use('/messages', messagesRouter);
-app.use('/students-list', studentsListRouter);
+app.use('/api/students', studentsRouter);
+app.use('/api/messages', messagesRouter);
+app.use('/api/students-list', studentsListRouter);
 
 // 서버 시작
 app.listen(port, () => {
