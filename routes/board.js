@@ -10,4 +10,8 @@ router.get('/create', (req, res) => {
     res.render('board/create-post');
 });
 
+router.get('/:id', (req, res) => {
+    res.render('board/post-detail')
+});
+
 module.exports = router;
