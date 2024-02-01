@@ -32,7 +32,7 @@ app.use('/board', boardRouter);
 app.use('/records', recordsRouter);
 
 // 학생 정보 등록 API
-app.post('/students', (req, res) => {
+app.post('/api/students', (req, res) => {
   const student = req.body;
 
   // student_id가 없다면 기본값으로 설정
@@ -53,7 +53,7 @@ app.post('/students', (req, res) => {
 
 
 // 학생 정보 조회 API
-app.get('/students', (req, res) => {
+app.get('/api/students', (req, res) => {
   db.query('SELECT * FROM students', (err, results) => {
     if (err) {
       console.error('MySQL query error:', err);
@@ -65,7 +65,7 @@ app.get('/students', (req, res) => {
 });
 
 // 새로운 메시지 등록 API
-app.post('/messages', (req, res) => {
+app.post('/api/messages', (req, res) => {
   const message = req.body;
 
   db.query('INSERT INTO qna SET ?', message, (err, result) => {
@@ -79,7 +79,7 @@ app.post('/messages', (req, res) => {
 });
 
 // 메시지 조회 API
-app.get('/messages', (req, res) => {
+app.get('/api/messages', (req, res) => {
   db.query('SELECT * FROM qna', (err, results) => {
     if (err) {
       console.error('MySQL query error:', err);
@@ -91,7 +91,7 @@ app.get('/messages', (req, res) => {
 });
 
 // 메시지 답변 등록 API
-app.post('/messages/:id/replies', (req, res) => {
+app.post('/api/messages/:id/replies', (req, res) => {
     const messageId = req.params.id;
     const replyText = req.body.reply_text;
   
@@ -110,7 +110,7 @@ app.post('/messages/:id/replies', (req, res) => {
   });
   
   // 메시지 및 답변 조회 API
-  app.get('/messages-with-replies', (req, res) => {
+  app.get('/api/messages-with-replies', (req, res) => {
     db.query('SELECT qna.*, message_replies.reply_text, message_replies.reply_time FROM qna LEFT JOIN message_replies ON qna.id = message_replies.message_id', (err, results) => {
       if (err) {
         console.error('MySQL query error:', err);
@@ -122,7 +122,7 @@ app.post('/messages/:id/replies', (req, res) => {
   });
 
  // 학생 정보 조회 페이지 라우터
-  app.get('/students-list', (req, res) => {
+  app.get('/api/students-list', (req, res) => {
     db.query('SELECT * FROM students', (err, results) => {
       if (err) {
         console.error('MySQL query error:', err);
