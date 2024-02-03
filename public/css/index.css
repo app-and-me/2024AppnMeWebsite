@@ -89,3 +89,17 @@ body::-webkit-scrollbar {
 #second {
     transform: translateY(20%);
 }
+
+.title {
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 160%;
+    margin-bottom: 10px;
+}
+
+.caption {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 160%;
+    color: var(--gray-700)
+}
