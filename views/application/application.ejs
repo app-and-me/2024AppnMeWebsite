@@ -62,7 +62,7 @@
                             전화번호
                             <div class="asterisk">*</div>
                         </label>
-                        <input type="text" name="phone_number" id="name" class="text-field"
+                        <input type="text" name="phone_number" id="phone_number" class="text-field"
                             oninput="this.value = this.value.replace(/[^0-9]/g, '');" placeholder="ex) 01012345678">
                     </div>
                     <div class="input-container">
@@ -133,6 +133,65 @@
         <div class="code">©Team App&Me</div>
     </footer>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form');
+
+            // 유효성 검사
+            form.addEventListener('submit', function (event) {
+                const studentId = document.getElementById('student_id').value;
+                const name = document.getElementById('name').value;
+                const phoneNumber = document.getElementById('phone_number').value;
+                const fiveCharactersRepresentation = document.getElementById('five_characters_representation').value;
+                const applicationMotivation = document.getElementById('application_motivation').value;
+
+                // 필드 중 하나라도 비어 있다면
+                if (!studentId || !name || !phoneNumber || !fiveCharactersRepresentation || !applicationMotivation) {
+                    event.preventDefault();
+                    alert('모든 필드를 채워주세요! 🙏');
+                    return;
+                }
+
+                // 학번이 4자리가 아니라면
+                if (studentId.length !== 4) {
+                    event.preventDefault();
+                    alert('학번은 반드시 4자리여야 합니다! 🙏');
+                    return;
+                }
+
+                // 이름이 한국어가 아니라면
+                if (!isKorean(name)) {
+                    event.preventDefault();
+                    alert('이름은 반드시 한글로 작성해주세요! 🙏');
+                }
+
+                if (!isValidPhoneNumber(phoneNumber)) {
+                    event.preventDefault();
+                    alert('전화번호는 010으로 시작하는 13자리 숫자로 작성해야 합니다! 🙏');
+                    return;
+                }
+
+                // 다섯글자가 아니라면
+                if (fiveCharactersRepresentation.length !== 5) {
+                    event.preventDefault();
+                    alert('오직 다섯 글자로만 자신의 표현해주세요! 🙏');
+                    return;
+                }
+            });
+
+            // 한국어인지 판별
+            function isKorean(str) {
+                const koreanRegex = /^[가-힣]+$/;
+                return koreanRegex.test(str);
+            }
+
+            // 전화번호 판별
+            function isValidPhoneNumber(phoneNumber) {
+                const phoneRegex = /^010\d{8}$/;
+                return phoneRegex.test(phoneNumber);
+            }
+        });
+    </script>
 </body>
 
 </html>
