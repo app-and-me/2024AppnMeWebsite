@@ -29,7 +29,7 @@
         </nav>
     </header>
     <main id="main">
-        <div class="count">전체 44건</div>
+        <div class="count"><div class="count">전체 <%= posts.length %>건</div></div>
         <table>
             <thead class="table-header">
                 <tr class="table-header-row">
@@ -40,69 +40,17 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="row" onclick="window.open('/board/1')">
-                    <td lass="number">1</td>
-                    <td class="title">첫 번째 게시글</td>
+                <% posts.forEach(post => { %>
+                    <tr class="row" onclick="window.open('/board/<%= post.id %>', '_top')">
+                    <td lass="number"><%= post.id %></td>
+                    <td class="title"><%= post.title %></td>
                     <td class="date">2024-02-01</td>
-                    <td class="complete">답변 준비중</td>
+                    <td class="complete complete<%= post.answered %>"><%= post.answered ? '답변 완료' :  '답변 준비중'%></td>
                 </tr>
-                <tr class="row">
-                    <td class="number">2</td>
-                    <td class="title">두 번째 게시글</td>
-                    <td class="date">2024-02-01</td>
-                    <td class="complete">답변 준비중</td>
-                </tr>
-                <tr class="row">
-                    <td class="number">3</td>
-                    <td class="title">세 번째 게시글</td>
-                    <td class="date">2024-02-01</td>
-                    <td class="complete">답변 준비중</td>
-                </tr>
-                <tr class="row">
-                    <td class="number">4</td>
-                    <td class="title">네 번째 게시글</td>
-                    <td class="date">2024-02-01</td>
-                    <td class="complete">답변 준비중</td>
-                </tr>
-                <tr class="row">
-                    <td class="number">5</td>
-                    <td class="title">다섯 번째 게시글</td>
-                    <td class="date">2024-02-01</td>
-                    <td class="complete">답변 준비중</td>
-                </tr>
-                <tr class="row">
-                    <td class="number">6</td>
-                    <td class="title">여섯 번째 게시글</td>
-                    <td class="date">2024-02-01</td>
-                    <td class="complete">답변 준비중</td>
-                </tr>
-                <tr class="row">
-                    <td class="number">7</td>
-                    <td class="title">일곱 번째 게시글</td>
-                    <td class="date">2024-02-01</td>
-                    <td class="complete">답변 준비중</td>
-                </tr>
-                <tr class="row">
-                    <td class="number">8</td>
-                    <td class="title">여덟 번째 게시글</td>
-                    <td class="date">2024-02-01</td>
-                    <td class="complete">답변 준비중</td>
-                </tr>
-                <tr class="row">
-                    <td class="number">9</td>
-                    <td class="title">아홉 번째 게시글</td>
-                    <td class="date">2024-02-01</td>
-                    <td class="complete">답변 준비중</td>
-                </tr>
-                <tr class="row">
-                    <td class="number">10</td>
-                    <td class="title">열 번째 게시글</td>
-                    <td class="date">2024-02-01</td>
-                    <td class="complete">답변 준비중</td>
-                </tr>
+                <% }) %>
             </tbody>
         </table>
-        <div class="page-nav">
+        <!-- <div class="page-nav">
             <div class="icons">
                 <div class="max-prev"><iconify-icon  class="icon" icon="material-symbols:keyboard-double-arrow-left-rounded"></iconify-icon></div>
                 <div class="prev"><iconify-icon class="icon" icon="iconamoon:arrow-left-2-light"></iconify-icon></div>
@@ -122,7 +70,7 @@
                 <div class="next"><iconify-icon class="icon" icon="iconamoon:arrow-right-2-light"></div>
                 <div class="max-next"><iconify-icon class="icon" icon="material-symbols:keyboard-double-arrow-right-rounded"></iconify-icon></div>
             </div>
-        </div>
+        </div> -->
     </main>
     <footer id="footer">
         <div class="logos">
