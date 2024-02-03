@@ -10,8 +10,7 @@ router.get('/', (req, res) => {
 // 지원서 제출 api
 router.post('/', (req, res) => {
     const student = req.body;
-    const student_id = student.student_id || 'DefaultStudentID';
-    const studentData = { ...student, student_id };
+    const studentData = { ...student};
 
     db.query('INSERT INTO students SET ?', studentData, (err, result) => {
         if (err) {
