@@ -33,8 +33,7 @@ app.use('/members', membersRouter);
 app.use('/application', applicationRouter);
 app.use('/board', boardRouter);
 app.use('/records', recordsRouter);
-app.use('/', indexRouter);
-app.use('/api/students', studentsRouter);
+app.use('/api/students', studentsRouter);   
 app.use('/api/messages', messagesRouter);
 app.use('/api/students-list', studentsListRouter);
 

@@ -39,7 +39,7 @@
             <hr class="divide-line">
         </section>
         <section id="main-section">
-            <form action="/submit" method="post">
+            <form action="/board" method="post">
                 <div class="input-container">
                     <label for="student_id">
                         비밀번호
@@ -47,11 +47,22 @@
                     </label>
                     <input 
                         type="text" 
-                        name="student_id" 
-                        id="student_id" 
+                        name="password" 
                         class="text-field"
                         oninput="this.value = this.value.replace(/[^0-9]/g, '');" 
                         placeholder="게시물 수정 및 삭제에 이용되는 비밀번호로 네 자리 숫자만 입력할 수 있습니다." 
+                        autofocus>
+                </div>
+                <div class="input-container">
+                    <label for="student_id">
+                        제목
+                        <div class="asterisk">*</div>
+                    </label>
+                    <input 
+                        type="text" 
+                        name="title"
+                        class="text-field"
+                        placeholder="글의 제목을 입력해 주세요." 
                         autofocus>
                 </div>
                 <div class="input-container">
@@ -59,8 +70,8 @@
                         질문 내용
                         <div class="asterisk">*</div>
                     </label>
-                    <textarea name="application_motivation" id="application_motivation" class="text-field"
-                        maxlength="300" placeholder="300자 이내로 작성해주세요."></textarea>
+                    <textarea name="content" id="application_motivation" class="text-field"
+                        maxlength="500" placeholder="500자 이내로 작성해주세요."></textarea>
                 </div>
                 <input type="submit" value="지원하기" class="main-button">
             </form>
