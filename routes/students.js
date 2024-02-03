@@ -5,10 +5,8 @@ const db = require('../database/database');
 // 학생 정보 등록 API
 router.post('/', (req, res) => {
   const student = req.body;
-  const student_id = student.student_id || 'DefaultStudentID';
-  const studentData = { ...student, student_id };
 
-  db.query('INSERT INTO students SET ?', studentData, (err, result) => {
+  db.query('INSERT INTO students SET ?', student, (err, result) => {
     if (err) {
       console.error('MySQL query error:', err);
       res.status(500).json({ error: '학생 정보가 들어가지 못했습니다!!' });
@@ -17,6 +15,7 @@ router.post('/', (req, res) => {
     }
   });
 });
+
 
 // 학생 정보 조회 API
 router.get('/', (req, res) => {
