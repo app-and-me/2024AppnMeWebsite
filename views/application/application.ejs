@@ -40,13 +40,13 @@
             <hr class="divide-line">
         </section>
         <section id="main-section">
-            <form action="/api/students" method="post">
+            <form action="/application" method="post">
                 <div class="input-container">
                     <label for="student_id">
                         학번
                         <div class="asterisk">*</div>
                     </label>
-                    <input type="text" name="student_id" id="student_id" class="text-field"
+                    <input type="text" name="hakbun" id="student_id" class="text-field"
                         oninput="this.value = this.value.replace(/[^0-9]/g, '');" placeholder="ex) 1101" autofocus>
                 </div>
                 <div class="input-container">
@@ -82,11 +82,11 @@
                         <label for="gender">기숙사 여부</label>
                         <div class="radio-container">
                             <div class="radio-item">
-                                <input type="radio" name="domitori_resident" value="1" checked />
+                                <input type="radio" name="dormitory_resident" value="1" checked />
                                 <span>기숙사생</span>
                             </div>
                             <div class="radio-item">
-                                <input type="radio" name="domitori_resident" value="0" />
+                                <input type="radio" name="dormitory_resident" value="0" />
                                 <span>통학생</span>
                             </div>
                         </div>
