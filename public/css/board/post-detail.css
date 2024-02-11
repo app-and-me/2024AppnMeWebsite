@@ -56,6 +56,20 @@
     line-height: 160%;
 }
 
+/* empty */
+.empty-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-text {
+    font-size: 1rem;
+    text-align: center;
+    color: var(--gray-700);
+}
+
 /* bottom-section */
 .bottom-section {
     display: flex;
