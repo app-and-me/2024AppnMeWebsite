@@ -18,7 +18,7 @@ router.post('/', (req, res) => {
             // TODO: 실패 페이지 만들기
             res.render('board/create-post');
         } else {
-            res.render('board/posts', { result })
+            res.render('upload/success-upload', { result })
         }
     });
 });
