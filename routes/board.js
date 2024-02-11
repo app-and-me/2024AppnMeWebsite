@@ -48,10 +48,9 @@ router.get('/:id', (req, res) => {
 });
 
 // 게시물 생성 페이지 렌더링
-router.get('/create', (req, res) => {
+router.get('/upload', (req, res) => {
     res.render('board/create-post');
 });
-
 
 // 새로운 메시지 등록 API
 router.post('/', (req, res) => {
@@ -64,10 +63,9 @@ router.post('/', (req, res) => {
             // TODO: 실패 페이지 만들기
             res.render('board/create-post');
         } else {
-            res.render('board/post-detail', { result })
+            res.render('board/posts', { result })
         }
     });
 });
-
 
 module.exports = router;

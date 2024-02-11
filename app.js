@@ -23,8 +23,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const indexRouter = require('./routes/index');              // 인덱스
 const membersRouter = require('./routes/members');          // 부원 소개
 const applicationRouter = require('./routes/application');  // 지원하기
-const boardRouter = require('./routes/board');                   // QnA
+const boardRouter = require('./routes/board');              // QnA
 const recordsRouter = require('./routes/records');          // 활동 기록
+const uploadRouter = require('./routes/upload');            // QnA 업로드
 const studentsRouter = require('./routes/students');   
 const messagesRouter = require('./routes/messages');     
 const studentsListRouter = require('./routes/students-list');
@@ -33,6 +34,7 @@ app.use('/members', membersRouter);
 app.use('/application', applicationRouter);
 app.use('/board', boardRouter);
 app.use('/records', recordsRouter);
+app.use('/upload', uploadRouter);
 app.use('/api/students', studentsRouter);   
 app.use('/api/messages', messagesRouter);
 app.use('/api/students-list', studentsListRouter);
