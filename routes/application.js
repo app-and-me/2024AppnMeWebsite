@@ -17,10 +17,10 @@ router.post('/', (req, res) => {
             console.error('MySQL query error:', err);
 
             // TODO: 지원 실패 페이지로 이동하기 (현재 지원 실패 페이지 존재하지 않음)
-            res.render('application/success_apply');
+            res.render('application/success-apply');
         } else {
             // 요청 성공 시 success apply 페이지로 이동함
-            res.render('application/success_apply');
+            res.render('application/success-apply');
         }
     });
 });
