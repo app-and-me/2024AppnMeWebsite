@@ -22,27 +22,21 @@ router.get('/:id', (req, res) => {
         if (err) {
             console.error('MySQL query error:', err);
             // TODO: 에러 페이지 보여주기
-            res.render('board/post-detail')
+            res.render('board/post-detail', { post: null }); 
         } else {
             db.query('SELECT * FROM message_replies WHERE message_id = ?', id, (err, replies) => {
                 if (err) {
                     console.error('MySQL query error:', err);
                     // TODO: 에러 페이지 보여주기
-                    res.render('board/post-detail')
+                    res.render('board/post-detail', { post: null }); 
                 } else {
-                    replies.map(reply => {
-                        return {
-                            ...posts[0],
-                            reply: {
-                                ...reply
-                            }
-                        }
-                    });
-
-                    res.render('board/post-detail', { post: posts[0] })
+                    const post = posts[0];
+                    const postWithReplies = { ...post, replies };
+    
+                    console.log(postWithReplies)
+                    res.render('board/post-detail', { post: postWithReplies });
                 }
-            })
-            console.log({ post: posts[0] })
+            });
         }
     });
 });
