@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -10,7 +11,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/nav.css">
     <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/records/records.css">
+    <link rel="stylesheet" href="/css/records/records-detail.css">
 </head>
 
 <body>
@@ -29,43 +30,19 @@
         </nav>
     </header>
     <main id="main">
-        <div class="section">
-            <h1 class="section-title">11기</h1>
-            <div class="majors">
-                <a href="/records/11/developers" class="major-wrap">
-                    <div class="major">
-                        <img src="/images/illustration/i1.png" alt="">
-                        <div class="sub-title">11기</div>
-                        <div class="sub-title">개발과</div>
-                    </div>
-                </a>
-                <a href="/records/11/designers" class="major-wrap">
-                    <div class="major">
-                        <img src="/images/illustration/i2.png" alt="">
-                        <div class="sub-title">11기</div>
-                        <div class="sub-title">디자인과</div>
-                    </div>
-                </a>
-            </div>
+        <div class="season">
+            <div class="th" onclick="window.open('/records/11/developers', '_top')">11기</div>
+            <div class="th selected" onclick="window.open('/records/12/developers', '_top')">12기</div>
         </div>
-        <div class="section">
-            <h1 class="section-title">12기</h1>
-            <div class="majors">
-                <a href="/records/12/developers" class="major-wrap">
-                    <div class="major">
-                        <img src="/images/illustration/i3.png" alt="">
-                        <div class="sub-title">12기</div>
-                        <div class="sub-title">개발과</div>
-                    </div>
-                </a>
-                <a href="/records/12/designers" class="major-wrap">
-                    <div class="major">
-                        <img src="/images/illustration/i4.png" alt="">
-                        <div class="sub-title">12기</div>
-                        <div class="sub-title">디자인과</div>
-                    </div>
-                </a>
+        <div class="main-content">
+            <div class="name-list">
+                <div class="name-title">개발과</div>
+                <div class="name name-selected">김선희</div>
+                <div class="name">김현지</div>
+                <div class="name">박세연</div>
+                <div class="name">황혜경</div>
             </div>
+            <div class="achieve"></div>
         </div>
     </main>
     <footer id="footer">
