@@ -3,7 +3,7 @@
     display: flex;
     padding: 0 15vw 10vh 15vw;
     width: calc(100% - 30vw);
-    justify-content: space-between;
+    gap: 12vw;
 }
 
 .section {
