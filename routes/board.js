@@ -21,18 +21,16 @@ router.get('/:id', (req, res) => {
     db.query('SELECT * FROM qna WHERE id = ?', id, (err, posts) => {
         if (err) {
             console.error('MySQL query error:', err);
-            // TODO: 에러 페이지 보여주기
-            res.render('board/post-detail', { post: null }); 
+            res.status(404).render('error404', {error: {code: 404, message: '요청한 페이지를 찾을 수 없어요.'}});
         } else {
             db.query('SELECT * FROM message_replies WHERE message_id = ?', id, (err, replies) => {
                 if (err) {
                     console.error('MySQL query error:', err);
-                    // TODO: 에러 페이지 보여주기
-                    res.render('board/post-detail', { post: null }); 
+                    res.status(404).render('error404', {error: {code: 404, message: '요청한 페이지를 찾을 수 없어요.'}});
                 } else {
                     const post = posts[0];
                     const postWithReplies = { ...post, replies };
-    
+
                     console.log(postWithReplies)
                     res.render('board/post-detail', { post: postWithReplies });
                 }
