@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>앱앤미</title>
     <link rel="icon" href="/favicon.ico">
@@ -15,103 +15,105 @@
 </head>
 
 <body>
-    <header id="header">
-        <nav id="nav">
-            <ul id="nav-menu">
-                <li class="nav-item"><a href="/members">부원 소개</a></li>
-                <li class="nav-item"><a href="/application">지원하기</a></li>
-                <li class="nav-item"><a href="/board">QnA</a></li>
-                <li class="nav-item"><a href="/records">활동기록</a> </li>
-                <li class="nav-item"><a href="/upload">질문하기</a> </li>
-            </ul>
-            <div id="nav-logo">
-                <a href="/"><img src="/images/logo.png" alt="" class="logo-img"></a>
-            </div>
-        </nav>
-    </header>
-    <main id="main">
-        <section class="top-section">
-            <% if (post) { %>
-                <div class="q-content">
-                    <div class="q-mark">Q.</div>
-                    <div class="title">
-                        <%= post.title %>
-                    </div>
-                </div>
-                <div class="post-info">
-                    <div class="date"><%= post.question_date %></div>
-                    <div class="line">|</div>
-                    <div class="number">
-                        <%= post.id %>
-                    </div>
-                </div>
-                <% } else { %>
-                    <p>게시글이 존재하지 않습니다.</p>
-                    <% } %>
-        </section>
-        <section class="main-section">
-            <% if (post && post.replies[0]) { %>
-                <div class="a-container">
-                    <div class="a-mark">A.</div>
-                    <div class="a-content">
-                        <%= post.replies[0].reply_text %>
-                    </div>
-                </div>
-                <% } else { %>
-                    <div class="empty-container">
-                        <div class="empty-logo">
-                            <img src="/images/empty-illustration.png" alt="">
-                        </div>
-                        <div class="empty-text">오 이런! 아직 답변이 준비되지 않았어요<br>
-                            조금만 더 기다려주세요</div>
-                    </div>
-                    <% } %>
-        </section>
-        <section class="bottom-section">
-            <% if (post.id> 1) { %>
-                <div class="move-container" onclick="moveToPost('<%= post.id - 1 %>')">
-                    <iconify-icon class="icon" icon="fluent:ios-arrow-left-24-filled"></iconify-icon>
-                    <div class="text">이전 글</div>
-                    <div class="move-title">
-                        <%= post.id - 1 %> 번째 게시물
-                    </div>
-                </div>
-                <% } %>
-
-                    <div class="move-container" onclick="moveToPost('<%= post.id + 1 %>')">
-                        <div class="move-title">
-                            <%= post.id + 1 %> 번째 게시물
-                        </div>
-                        <div class="text">다음 글</div>
-                        <iconify-icon class="icon" icon="fluent:ios-arrow-right-24-filled"></iconify-icon>
-                    </div>
-        </section>
-    </main>
-    <footer id="footer">
-        <div class="logos">
-            <div class="anm-logo">
-                <img src="/images/logo.png" alt="앱앤미로고">
-                <span>App&Me</span>
-            </div>
-            <div class="sns-logo">
-                <img src="/images/instagram.png" alt="">
-            </div>
+<header id="header">
+    <nav id="nav">
+        <ul id="nav-menu">
+            <li class="nav-item"><a href="/members">부원 소개</a></li>
+            <li class="nav-item"><a href="/application">지원하기</a></li>
+            <li class="nav-item"><a href="/board">QnA</a></li>
+            <li class="nav-item"><a href="/records">활동기록</a></li>
+            <li class="nav-item"><a href="/upload">질문하기</a></li>
+        </ul>
+        <div id="nav-logo">
+            <a href="/"><img src="/images/logo.png" alt="" class="logo-img"></a>
         </div>
-        <div class="info">
-            <div>문의전화: 010-0000-0000</div>
-            <div>이메일 : w2218@e-mirim.hs.kr</div>
+    </nav>
+</header>
+<main id="main">
+    <section class="top-section">
+        <% if (post) { %>
+            <div class="q-content">
+                <div class="q-mark">Q.</div>
+                <div class="title">
+                    <%= post.title %>
+                </div>
+            </div>
+            <div class="post-info">
+                <div class="date"><%= post.question_date %></div>
+                <div class="line">|</div>
+                <div class="number">
+                    <%= post.id %>
+                </div>
+            </div>
+        <% } else { %>
+            <p>게시글이 존재하지 않습니다.</p>
+        <% } %>
+    </section>
+    <section class="main-section">
+        <% if (post && post.replies[0]) { %>
+            <div class="a-container">
+                <div class="a-mark">A.</div>
+                <div class="a-content">
+                    <%= post.replies[0].reply_text %>
+                </div>
+            </div>
+        <% } else { %>
+            <div class="empty-container">
+                <div class="empty-logo">
+                    <img src="/images/empty-illustration.png" alt="">
+                </div>
+                <div class="empty-text">오 이런! 아직 답변이 준비되지 않았어요<br>
+                    조금만 더 기다려주세요
+                </div>
+            </div>
+        <% } %>
+    </section>
+    <section class="bottom-section">
+        <% if (post.id > 1) { %>
+            <div class="move-container" onclick="moveToPost('<%= post.id - 1 %>')">
+                <iconify-icon class="icon" icon="fluent:ios-arrow-left-24-filled"></iconify-icon>
+                <div class="text">이전 글</div>
+                <div class="move-title">
+                    <%= post.id - 1 %> 번째 게시물
+                </div>
+            </div>
+        <% } %>
+        <% if (hasNextPost) { %>
+            <div class="move-container" onclick="moveToPost('<%= post.id + 1 %>')">
+                <div class="move-title">
+                    <%= post.id + 1 %> 번째 게시물
+                </div>
+                <div class="text">다음 글</div>
+                <iconify-icon class="icon" icon="fluent:ios-arrow-right-24-filled"></iconify-icon>
+            </div>
+        <% } %>
+    </section>
+</main>
+<footer id="footer">
+    <div class="logos">
+        <div class="anm-logo">
+            <img src="/images/logo.png" alt="앱앤미로고">
+            <span>App&Me</span>
         </div>
-        <hr>
-        <div class="code">©Team App&Me</div>
-    </footer>
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+        <div class="sns-logo">
+            <img src="/images/instagram.png" alt="">
+        </div>
+    </div>
+    <div class="info">
+        <div>문의전화: 010-0000-0000</div>
+        <div>이메일 : w2218@e-mirim.hs.kr</div>
+    </div>
+    <hr>
+    <div class="code">©Team App&Me</div>
+</footer>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
-    <script>
-        function moveToPost(postId) {
-            const url = `/board/${postId}`;
-            window.open(url, '_top');
-        }
-    </script>
+<script>
+    function moveToPost(postId) {
+        const url = `/board/${postId}`;
+        window.open(url, '_top');
+    }
+</script>
 </body>
 
 </html>
