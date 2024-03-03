@@ -36,30 +36,30 @@
     </div>
     <div class="majors">
         <div class="major fake"></div>
-        <div class="major selected" id="software">뉴미디어 소프트웨과</div>
+        <div class="major" id="software">뉴미디어 소프트웨과</div>
         <div class="major" id="web">뉴미디어 웹솔루션과</div>
         <div class="major" id="design">뉴미디어 디자인과</div>
         <div class="major fake"></div>
     </div>
     <div class="members-container">
-        <% members.software.forEach(member => { %>
+        <% members.forEach(member => { %>
             <div class="member-container">
                 <div class="member-image">
-                    <img src="<%= member.image %>" alt="">
+                    <img src="<%= member.image %>" alt="<%= member.name %>">
                 </div>
                 <div class="member-name"><%= member.name %></div>
                 <div class="member-links">
-                    <a href="<%= member.ig %>" class="link ig">
-                        <img src="/images/instagram.png" alt="">
+                    <a href="<%= member.ig %>" class="link ig" target="_blank">
+                        <img src="/images/instagram.png" alt="Instagram">
                     </a>
-                    <a href="<% member.github %>" class="link github">
-                        <img src="/images/github.png" alt="">
-                    </a>
+                    <% if (member.github) { %>
+                        <a href="<%= member.github %>" class="link github" target="_blank">
+                            <img src="/images/github.png" alt="GitHub">
+                        </a>
+                    <% } %>
                 </div>
             </div>
         <% }); %>
-    </div>
-
     </div>
 </main>
 <footer id="footer">
@@ -80,7 +80,17 @@
     <div class="code">©Team App&Me</div>
 </footer>
 <script>
+    // 현재 페이지의 URL에서 쿼리 스트링을 읽어옴
+    const urlParams = new URLSearchParams(window.location.search);
 
+    // 쿼리 스트링에서 'major' 파라미터 값을 가져옴
+    const selectedMajorId = urlParams.get('major');
+
+    // 선택된 major에 해당하는 DOM 요소에 selected 클래스 추가
+    const selectedMajorElement = document.getElementById(selectedMajorId);
+    if (selectedMajorElement) {
+        selectedMajorElement.classList.add('selected');
+    }
 </script>
 </body>
 
