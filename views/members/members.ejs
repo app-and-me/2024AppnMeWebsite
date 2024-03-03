@@ -31,8 +31,8 @@
 </header>
 <main id="main">
     <div class="season">
-        <div class="th selected">11기</div>
-        <div class="th">12기</div>
+        <div class="th" id="11" onclick="window.open('/members', '_top')">11기</div>
+        <div class="th" id="12" onclick="window.open('/members?cohort=12', '_top')">12기</div>
     </div>
     <div class="majors">
         <div class="major fake"></div>
@@ -82,14 +82,16 @@
 <script>
     const urlParams = new URLSearchParams(window.location.search);
 
-    // 쿼리 스트링에서 major 파라미터 값 가져오기
-    const selectedMajorId = urlParams.get('major');
+    // 쿼리 스트링에서 파라미터 값 가져오기
+    const selectedMajorId = urlParams.get('major') || "software";
+    const selectedCohortId = urlParams.get('cohort') ||  "11";
 
     // selected 클래스 추가
     const selectedMajorElement = document.getElementById(selectedMajorId);
-    if (selectedMajorElement) {
-        selectedMajorElement.classList.add('selected');
-    }
+    if (selectedMajorElement) selectedMajorElement.classList.add('selected');
+
+    const selectedCohort = document.getElementById(selectedCohortId);
+    if (selectedCohort) selectedCohort.classList.add('selected');
 
     // 학과 클릭 시 그 학과 부원으로 이동
     document.querySelectorAll('.major').forEach(major => {
@@ -97,7 +99,8 @@
             event.preventDefault(); // 기본 동작 방지
 
             const majorId = this.id;
-            const newUrl = `/members?major=${majorId}`;
+            const cohort = selectedCohortId;
+            const newUrl = `/members?cohort=${selectedCohortId}&major=${majorId}`;
 
             // 페이지를 변경
             window.location.href = newUrl;
