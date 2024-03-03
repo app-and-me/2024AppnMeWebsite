@@ -25,7 +25,6 @@ router.get('/', (req, res) => {
                 question_date: formatDate(result.question_date)
             }));
 
-            console.log(formattedResults)
             res.status(200).render('board/posts', { posts: formattedResults });
         }
     });
