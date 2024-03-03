@@ -36,54 +36,30 @@
     </div>
     <div class="majors">
         <div class="major fake"></div>
-        <div class="major selected">뉴미디어 소프트웨과</div>
-        <div class="major">뉴미디어 웹솔루션과</div>
-        <div class="major">뉴미디어 디자인과</div>
+        <div class="major selected" id="software">뉴미디어 소프트웨과</div>
+        <div class="major" id="web">뉴미디어 웹솔루션과</div>
+        <div class="major" id="design">뉴미디어 디자인과</div>
         <div class="major fake"></div>
     </div>
     <div class="members-container">
-        <div class="member-container">
-            <div class="member-image">
-                <img src="/images/members/11/김현지.png" alt="">
+        <% members.software.forEach(member => { %>
+            <div class="member-container">
+                <div class="member-image">
+                    <img src="<%= member.image %>" alt="">
+                </div>
+                <div class="member-name"><%= member.name %></div>
+                <div class="member-links">
+                    <a href="<%= member.ig %>" class="link ig">
+                        <img src="/images/instagram.png" alt="">
+                    </a>
+                    <a href="<% member.github %>" class="link github">
+                        <img src="/images/github.png" alt="">
+                    </a>
+                </div>
             </div>
-            <div class="member-name">김현지</div>
-            <div class="member-links">
-                <a href="#" class="link ig">
-                    <img src="/images/instagram.png" alt="">
-                </a>
-                <a href="#" class="link github">
-                    <img src="/images/github.png" alt="">
-                </a>
-            </div>
-        </div>
-        <div class="member-container">
-            <div class="member-image">
-                <img src="/images/members/11/김현지.png" alt="">
-            </div>
-            <div class="member-name">김현지</div>
-            <div class="member-links">
-                <a href="#" class="link ig">
-                    <img src="/images/instagram.png" alt="">
-                </a>
-                <a href="#" class="link github">
-                    <img src="/images/github.png" alt="">
-                </a>
-            </div>
-        </div>
-        <div class="member-container">
-            <div class="member-image">
-                <img src="/images/members/11/김현지.png" alt="">
-            </div>
-            <div class="member-name">김현지</div>
-            <div class="member-links">
-                <a href="#" class="link ig">
-                    <img src="/images/instagram.png" alt="">
-                </a>
-                <a href="#" class="link github">
-                    <img src="/images/github.png" alt="">
-                </a>
-            </div>
-        </div>
+        <% }); %>
+    </div>
+
     </div>
 </main>
 <footer id="footer">
@@ -103,6 +79,9 @@
     <hr>
     <div class="code">©Team App&Me</div>
 </footer>
+<script>
+
+</script>
 </body>
 
 </html>
