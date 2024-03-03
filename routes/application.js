@@ -15,9 +15,7 @@ router.post('/', (req, res) => {
     db.query('INSERT INTO students SET ?', studentData, (err, result) => {
         if (err) {
             console.error('MySQL query error:', err);
-
-            // TODO: 지원 실패 페이지로 이동하기 (현재 지원 실패 페이지 존재하지 않음)
-            res.render('application/success-apply');
+            res.status(404).render('error404', {error: {code: 404, message: '요청한 페이지를 찾을 수 없어요.'}});
         } else {
             // 요청 성공 시 success apply 페이지로 이동함
             res.render('application/success-apply');
