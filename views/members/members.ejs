@@ -4,54 +4,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>앱앤미</title>
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/nav.css">
     <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/member/member.css">
+    <link rel="stylesheet" href="/css/members/members.css">
 </head>
 
 <body>
-    <header id="header">
-        <nav id="nav">
-            <ul id="nav-menu">
-                <li class="nav-item"><a href="/members">부원 소개</a></li>
-                <li class="nav-item"><a href="/application">지원하기</a></li>
-                <li class="nav-item"><a href="/board">QnA</a></li>
-                <li class="nav-item"><a href="/records">활동기록</a> </li>
-                <li class="nav-item"><a href="/upload">질문하기</a> </li>
-            </ul>
-            <div id="nav-logo">
-                <a href="/"><img src="/images/logo.png" alt="" class="logo-img"></a>
-            </div>
-        </nav>
-    </header>
-    <main id="main">
-        <div class="section">
-            <div class="section-title">11기</div>
-            
+<header id="header">
+    <nav id="nav">
+        <ul id="nav-menu">
+            <li class="nav-item"><a href="/members">부원 소개</a></li>
+            <li class="nav-item"><a href="/application">지원하기</a></li>
+            <li class="nav-item"><a href="/board">QnA</a></li>
+            <li class="nav-item"><a href="/records">활동기록</a></li>
+            <li class="nav-item"><a href="/upload">질문하기</a></li>
+        </ul>
+        <div id="nav-logo">
+            <a href="/"><img src="/images/logo.png" alt="" class="logo-img"></a>
         </div>
-    </main>
-    <footer id="footer">
-        <div class="logos">
-            <div class="anm-logo">
-                <img src="/images/logo.png" alt="앱앤미로고">
-                <span>App&Me</span>
+    </nav>
+</header>
+<main id="main">
+    <div class="season">
+        <div class="th selected">11기</div>
+        <div class="th">12기</div>
+    </div>
+    <div class="majors">
+        <div class="major fake"></div>
+        <div class="major" id="software">뉴미디어 소프트웨과</div>
+        <div class="major" id="web">뉴미디어 웹솔루션과</div>
+        <div class="major" id="design">뉴미디어 디자인과</div>
+        <div class="major fake"></div>
+    </div>
+    <div class="members-container">
+        <% members.forEach(member => { %>
+            <div class="member-container">
+                <div class="member-image">
+                    <img src="<%= member.image %>" alt="<%= member.name %>">
+                </div>
+                <div class="member-name"><%= member.name %></div>
+                <div class="member-links">
+                    <a href="<%= member.ig %>" class="link ig" target="_blank">
+                        <img src="/images/instagram.png" alt="Instagram">
+                    </a>
+                    <% if (member.github) { %>
+                        <a href="<%= member.github %>" class="link github" target="_blank">
+                            <img src="/images/github.png" alt="GitHub">
+                        </a>
+                    <% } %>
+                </div>
             </div>
-            <div class="sns-logo">
-                <img src="/images/instagram.png" alt="">
-            </div>
+        <% }); %>
+    </div>
+</main>
+<footer id="footer">
+    <div class="logos">
+        <div class="anm-logo">
+            <img src="/images/logo.png" alt="앱앤미로고">
+            <span>App&Me</span>
         </div>
-        <div class="info">
-            <div>문의전화: 010-0000-0000</div>
-            <div>이메일 : w2218@e-mirim.hs.kr</div>
+        <div class="sns-logo">
+            <img src="/images/instagram.png" alt="">
         </div>
-        <hr>
-        <div class="code">©Team App&Me</div>
-    </footer>
+    </div>
+    <div class="info">
+        <div>문의전화: 010-0000-0000</div>
+        <div>이메일 : w2218@e-mirim.hs.kr</div>
+    </div>
+    <hr>
+    <div class="code">©Team App&Me</div>
+</footer>
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+
+    // 쿼리 스트링에서 major 파라미터 값 가져오기
+    const selectedMajorId = urlParams.get('major');
+
+    // selected 클래스 추가
+    const selectedMajorElement = document.getElementById(selectedMajorId);
+    if (selectedMajorElement) {
+        selectedMajorElement.classList.add('selected');
+    }
+
+    // 학과 클릭 시 그 학과 부원으로 이동
+    document.querySelectorAll('.major').forEach(major => {
+        major.addEventListener('click', function (event) {
+            event.preventDefault(); // 기본 동작 방지
+
+            const majorId = this.id;
+            const newUrl = `/members?major=${majorId}`;
+
+            // 페이지를 변경
+            window.location.href = newUrl;
+        });
+    });
+</script>
 </body>
 
 </html>

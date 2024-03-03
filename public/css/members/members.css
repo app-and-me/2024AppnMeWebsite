@@ -1,0 +1,100 @@
+#main {
+    margin-top: calc(100px + 36px); /* header + margin */
+    width: 100%;
+}
+
+.season {
+    display: flex;
+    align-items: flex-end;
+    gap: 40px;
+    margin: 0 15vw 67px 15vw;
+}
+
+.th {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--gray-600);
+    cursor: pointer;
+}
+
+.th.selected {
+    font-size: 2.8rem;
+    color: var(--gray-900);
+}
+
+.majors {
+    display: flex;
+    width: 100%;
+}
+
+.major {
+    height: 60px;
+    width: calc(70vw / 3);
+    border-bottom: 1px solid var(--gray-600);
+    color: var(--gray-600);
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.major.selected {
+    border-bottom: 1px solid var(--primary-500);
+    color: var(--primary-500);
+}
+
+.major.fake {
+    width: 15vw;
+    cursor: default;
+}
+
+.members-container {
+    display: flex;
+    padding: 12vh 15vw;
+}
+
+.member-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    width: calc(70vw / 3);
+}
+
+.member-image {
+    width: 16vw;
+    height: 16vw;
+}
+
+.member-image > img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.member-name {
+    border-radius: 23px;
+    border: 1px solid var(--primary-500);
+    padding: 8px 32px;
+    margin: 12px 0 0 0;
+}
+
+.member-links {
+    display: flex;
+    gap: 24px;
+}
+
+.link {
+    width: 32px;
+    height: 32px;
+}
+
+.link > img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
