@@ -49,8 +49,11 @@ router.get('/:id', (req, res) => {
 
                     postWithReplies.question_date = formatDate(postWithReplies.question_date);
 
-                    console.log(postWithReplies)
-                    res.render('board/post-detail', { post: postWithReplies });
+                    // 다음 게시물 존재 여부
+                    db.query('SELECT id FROM qna WHERE id > ? LIMIT 1', id, (err, nextPost) => {
+                        const hasNextPost = nextPost.length > 0;
+                        res.render('board/post-detail', { post: postWithReplies, hasNextPost });
+                    });
                 }
             });
         }
