@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
     fs.readFile(memberDataPath, 'utf8', (err, data) => {
         if (err) {
             console.error('Error reading data.json:', err);
-            res.status(500).render('error404', { error: { code: 500, message: '인터넷 서버 에러가 발생했습니다.' } });
+            res.status(500).render('error', { error: { code: 500, message: '인터넷 서버 에러가 발생했습니다.' } });
             return;
         }
 

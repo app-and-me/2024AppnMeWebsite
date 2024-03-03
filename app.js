@@ -39,7 +39,7 @@ app.use('/api/students-list', studentsListRouter);
 
 // 404
 app.get('/404', (req, res) => {
-    res.status(404).render('error404', {error: {code: 404, message: '요청한 페이지를 찾을 수 없어요.'}});
+    res.status(404).render('error', {error: {code: 404, message: '요청한 페이지를 찾을 수 없어요.'}});
 })
 
 app.get('/', (req, res) => {
