@@ -1,5 +1,5 @@
 {
-  "cohort11": {
+  "11": {
     "software": [
       {
         "name": "김선희",
@@ -40,6 +40,47 @@
         "ig": "https://www.instagram.com/leeyoujin410"
       }
     ]
+  },
+  "12": {
+    "software": [
+      {
+        "name": "윤주영",
+        "image": "/images/members/12/윤주영.png",
+        "ig": "https://www.instagram.com/yun_ju_0_/",
+        "github": "https://github.com/juyoung07"
+      },
+      {
+        "name": "추다율",
+        "image": "/images/members/12/추다율.png",
+        "ig": "https://www.instagram.com/luyaduhc/",
+        "github": "https://github.com/dayul"
+      }
+    ],
+    "web": [
+      {
+        "name": "배주연",
+        "image": "/images/members/12/배주연.png",
+        "ig": "https://www.instagram.com/ba.ezy/",
+        "github": "https://github.com/juyeon-Bae"
+      },
+      {
+        "name": "황유진",
+        "image": "/images/members/12/황유진.png",
+        "ig": "https://www.instagram.com/h.ofkj/",
+        "github": "https://github.com/hofkj"
+      }
+    ],
+    "design": [
+      {
+        "name": "송유빈",
+        "image": "/images/members/12/송유빈.png",
+        "ig": "https://www.instagram.com/sonououorn.xo/"
+      },
+      {
+        "name": "하지민",
+        "image": "/images/members/12/하지민.png",
+        "ig": "https://www.instagram.com/hovynq/"
+      }
+    ]
   }
-
 }
