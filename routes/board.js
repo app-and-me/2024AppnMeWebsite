@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
     db.query('SELECT * FROM qna', (err, results) => {
         if (err) {
             console.error('MySQL query error:', err);
-            res.status(500).json({ error: '메시지를 불러오지 못했습니다!!' });
+            res.status(404).render('error404', {error: {code: 404, message: '요청한 페이지를 찾을 수 없어요.'}});
         } else {
             res.status(200).render('board/posts', { posts: results });
         }
