@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
             const memberData = JSON.parse(data);
 
             // 기수 및 전공 쿼리스트링 파라미터 가져오기
-            const cohort = req.query.cohort || 'cohort11'; // 디폴트는 cohort11
+            const cohort = req.query.cohort || '11'; // 디폴트는 cohort11
             const major = req.query.major || 'software';  // 디폴트는 software
 
             // 선택된 기수 및 전공에 해당하는 데이터 가져오기
