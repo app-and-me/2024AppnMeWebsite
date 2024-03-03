@@ -1,0 +1,45 @@
+{
+  "members11": {
+    "software": [
+      {
+        "name": "김선희",
+        "image": "/images/members/11/김선희.png",
+        "ig": "https://www.instagram.com/iris_starry_",
+        "github": "https://github.com/iris-starry"
+      },
+      {
+        "name": "김현지",
+        "image": "/images/members/11/김현지.png",
+        "ig": "https://www.instagram.com/de_quei/",
+        "github": "https://github.com/de-quei"
+      },
+      {
+        "name": "박세연",
+        "image": "/images/members/11/박세연.png",
+        "ig": "https://www.instagram.com/seyeonparkk/",
+        "github": "https://github.com/de-quei"
+      }
+    ],
+    "web": [
+      {
+        "name": "황혜경",
+        "image": "/images/members/11/황혜경.png",
+        "ig": "https://www.instagram.com/hulrud",
+        "github": "https://github.com/hyeg0121"
+      }
+    ],
+    "design": [
+      {
+        "name": "박재희",
+        "image": "/images/members/11/박재희.png",
+        "ig": "https://www.instagram.com/qorhvmek_52"
+      },
+      {
+        "name": "이유진",
+        "image": "/images/members/11/이유진.png",
+        "ig": "https://www.instagram.com/leeyoujin410"
+      }
+    ]
+  }
+
+}
