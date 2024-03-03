@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
     res.render('records/records');
 });
 
-router.get('/detail', (req, res) => {
+router.get('/details', (req, res) => {
     // data.json 파일을 읽어옴
     fs.readFile(dataPath, 'utf8', (err, data) => {
         if (err) {
@@ -22,12 +22,19 @@ router.get('/detail', (req, res) => {
         try {
             const jsonData = JSON.parse(data);
 
-            const cohort = req.query.cohort || '11';
-            const major = req.query.major || 'dev';
-            const recordsData = jsonData.records[cohort] && jsonData.records[cohort][major] || [];
-            console.log(recordsData);
+            // 기수, 전공, 인덱스 쿼리스트링 파라미터 가져오기
+            const cohort = req.query.cohort || '11'; // 디폴트는 11
+            const major = req.query.major || 'dev'; // 디폴트는 dev
+            const index = req.query.index || 0;
 
-            res.render('records/record-details', { records: recordsData});
+            // 선택된 기수 및 전공에 해당하는 데이터 가져오기
+            const selectedData = jsonData.records[cohort] && jsonData.records[cohort][major]
+                && jsonData.records[cohort][major][index] || [];
+
+            // namelist 데이터 가져오기
+            const namelist = jsonData.namelist[cohort][major] || [];
+
+            res.render('records/record-details', { records: selectedData, namelist, cohort, major, index });
         } catch (jsonError) {
             console.error('Error parsing JSON:', jsonError);
             res.status(500).render('error', { error: { code: 500, message: '인터넷 서버 에러가 발생했습니다.' } });
