@@ -74,6 +74,11 @@ body::-webkit-scrollbar {
 .image.top {
     z-index: 1;
     transform: translate(10%, -10%);
+    transition: 0.4s ease;
+}
+
+.image.top:hover {
+    transform: translate(10%, -10%) rotate(-7deg);
 }
 
 .title {
