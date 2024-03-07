@@ -46,7 +46,7 @@
                     <td lass="number"><%= post.id %></td>
                     <td class="title"><%= post.title %></td>
                     <td class="date"><%= post.question_date %></td>
-                    <td class="complete complete<%= post.answered %>"><%= post.answered ? '답변 완료' :  '답변 준비중'%></td>
+                    <td class="complete complete"><%= post.isAnswered ? '답변 완료' :  '답변 준비중'%></td>
                 </tr>
                 <% }) %>
             </tbody>
