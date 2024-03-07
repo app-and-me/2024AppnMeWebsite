@@ -15,24 +15,25 @@ function formatDate(inputDate) {
 
 // 게시판 목록 렌더링
 router.get('/', (req, res) => {
-    db.query('SELECT * FROM qna', (err, results) => {
+    db.query('SELECT qna.*, COUNT(message_replies.id) AS reply_count FROM qna LEFT JOIN message_replies ON qna.id = message_replies.message_id GROUP BY qna.id ORDER BY qna.question_date DESC', (err, results) => {
         if (err) {
             console.error('MySQL query error:', err);
-            res.status(404).render('error404', {error: {code: 404, message: '요청한 페이지를 찾을 수 없어요.'}});
+            res.status(404).render('error', {error: {code: 404, message: '요청한 페이지를 찾을 수 없어요.'}});
         } else {
             const formattedResults = results.map(result => ({
                 ...result,
-                question_date: formatDate(result.question_date)
+                question_date: formatDate(result.question_date),
+                isAnswered: result.reply_count > 0
             }));
 
-            res.status(200).render('board/posts', { posts: formattedResults });
+            res.status(200).render('board/posts', {posts: formattedResults});
         }
     });
 });
 
 // 하나의 게시글 불러오기
 router.get('/:id', (req, res) => {
-    const { id } = req.params;
+    const {id} = req.params;
 
     db.query('SELECT * FROM qna WHERE id = ?', id, (err, posts) => {
         if (err) {
@@ -45,14 +46,14 @@ router.get('/:id', (req, res) => {
                     res.status(404).render('error404', {error: {code: 404, message: '요청한 페이지를 찾을 수 없어요.'}});
                 } else {
                     const post = posts[0];
-                    const postWithReplies = { ...post, replies };
+                    const postWithReplies = {...post, replies};
 
                     postWithReplies.question_date = formatDate(postWithReplies.question_date);
 
                     // 다음 게시물 존재 여부
                     db.query('SELECT id FROM qna WHERE id > ? LIMIT 1', id, (err, nextPost) => {
                         const hasNextPost = nextPost.length > 0;
-                        res.render('board/post-detail', { post: postWithReplies, hasNextPost });
+                        res.render('board/post-detail', {post: postWithReplies, hasNextPost});
                     });
                 }
             });

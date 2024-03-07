@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>앱앤미</title>
     <link rel="icon" href="/favicon.ico">
@@ -15,87 +15,75 @@
 </head>
 
 <body>
-    <header id="header">
-        <nav id="nav">
-            <ul id="nav-menu">
-                <li class="nav-item"><a href="/members">부원 소개</a></li>
-                <li class="nav-item"><a href="/application">지원하기</a></li>
-                <li class="nav-item"><a href="/board">QnA</a></li>
-                <li class="nav-item"><a href="/records">활동기록</a> </li>
-                <li class="nav-item"><a href="/upload">질문하기</a> </li>
-            </ul>
-            <div id="nav-logo">
-                <a href="/"><img src="/images/logo.png" alt="" class="logo-img"></a>
-            </div>
-        </nav>
-    </header>
+<header id="header">
+    <nav id="nav">
+        <ul id="nav-menu">
+            <li class="nav-item"><a href="/members">부원 소개</a></li>
+            <li class="nav-item"><a href="/application">지원하기</a></li>
+            <li class="nav-item"><a href="/board">QnA</a></li>
+            <li class="nav-item"><a href="/records">활동기록</a></li>
+            <li class="nav-item"><a href="/upload">질문하기</a></li>
+        </ul>
+        <div id="nav-logo">
+            <a href="/"><img src="/images/logo.png" alt="" class="logo-img"></a>
+        </div>
+    </nav>
+</header>
 
-    <main id="main">
-        <section id="top-section">
-            <iconify-icon icon="charm:arrow-left" class="prev-icon" onclick="window.open('/board', '_top')"></iconify-icon>
-            <h1 class="main-title">
-                앱앤미 Q&A 게시판 입니다!
-            </h1>
-            <h6 class="sub-title">자유롭게 질문 해주세요!</h6>
-            <hr class="divide-line">
-        </section>
-        <section id="main-section">
-            <form action="/upload" method="post">
-                <div class="input-container">
-                    <label for="student_id">
-                        비밀번호
-                        <div class="asterisk">*</div>
-                    </label>
-                    <input 
-                        type="text" 
-                        name="password" 
-                        class="text-field"
-                        oninput="this.value = this.value.replace(/[^0-9]/g, '');" 
-                        placeholder="게시물 수정 및 삭제에 이용되는 비밀번호로 네 자리 숫자만 입력할 수 있습니다." 
-                        autofocus>
-                </div>
-                <div class="input-container">
-                    <label for="student_id">
-                        제목
-                        <div class="asterisk">*</div>
-                    </label>
-                    <input 
-                        type="text" 
+<main id="main">
+    <section id="top-section">
+        <iconify-icon icon="charm:arrow-left" class="prev-icon" onclick="window.open('/board', '_top')"></iconify-icon>
+        <h1 class="main-title">
+            앱앤미 Q&A 게시판 입니다!
+        </h1>
+        <h6 class="sub-title">자유롭게 질문 해주세요!</h6>
+        <hr class="divide-line">
+    </section>
+    <section id="main-section">
+        <form action="/upload" method="post">
+            <div class="input-container">
+                <label for="student_id">
+                    제목
+                    <div class="asterisk">*</div>
+                </label>
+                <input
+                        type="text"
                         name="title"
                         class="text-field"
-                        placeholder="글의 제목을 입력해 주세요." 
+                        placeholder="글의 제목을 입력해 주세요."
                         autofocus>
-                </div>
-                <div class="input-container">
-                    <label for="application_motivation">
-                        질문 내용
-                        <div class="asterisk">*</div>
-                    </label>
-                    <textarea name="content" id="application_motivation" class="text-field"
-                        maxlength="500" placeholder="500자 이내로 작성해주세요."></textarea>
-                </div>
-                <input type="submit" value="질문하기" class="main-button">
-            </form>
-        </section>
-    </main>
-    <footer id="footer">
-        <div class="logos">
-            <div class="anm-logo">
-                <img src="/images/logo.png" alt="앱앤미로고">
-                <span>App&Me</span>
             </div>
-            <div class="sns-logo">
-                <img src="/images/instagram.png" alt="">
+            <div class="input-container">
+                <label for="application_motivation">
+                    질문 내용
+                    <div class="asterisk">*</div>
+                </label>
+                <textarea name="content" id="application_motivation" class="text-field"
+                          maxlength="500" placeholder="500자 이내로 작성해주세요."></textarea>
             </div>
+            <input type="submit" value="질문하기" class="main-button">
+        </form>
+    </section>
+</main>
+<footer id="footer">
+    <div class="logos">
+        <div class="anm-logo">
+            <img src="/images/logo.png" alt="앱앤미로고">
+            <span>App&Me</span>
         </div>
-        <div class="info">
-            <div>문의전화: 010-0000-0000</div>
-            <div>이메일 : w2218@e-mirim.hs.kr</div>
+        <div class="sns-logo">
+            <a href="https://www.instagram.com/app_and_me/"><img src="/images/instagram.png" alt=""></a>
+            <a href="https://github.com/app-and-me"><img src="/images/github.png" alt=""></a>
         </div>
-        <hr>
-        <div class="code">©Team App&Me</div>
-    </footer>
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    </div>
+    <div class="info">
+        <div>문의전화: 010-0000-0000</div>
+        <div>이메일 : w2218@e-mirim.hs.kr</div>
+    </div>
+    <hr>
+    <div class="code">©Team App&Me</div>
+</footer>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </body>
 
 </html>

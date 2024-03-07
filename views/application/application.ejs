@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>앱앤미</title>
     <link rel="icon" href="/favicon.ico">
@@ -15,184 +15,183 @@
 </head>
 
 <body>
-    <header id="header">
-        <nav id="nav">
-            <ul id="nav-menu">
-                <li class="nav-item"><a href="/members">부원 소개</a></li>
-                <li class="nav-item"><a href="/application">지원하기</a></li>
-                <li class="nav-item"><a href="/board">QnA</a></li>
-                <li class="nav-item"><a href="/records">활동기록</a> </li>
-                <li class="nav-item"><a href="/upload">질문하기</a> </li>
-            </ul>
-            <div id="nav-logo">
-                <a href="/"><img src="/images/logo.png" alt="" class="logo-img"></a>
-            </div>
-        </nav>
-    </header>
+<header id="header">
+    <nav id="nav">
+        <ul id="nav-menu">
+            <li class="nav-item"><a href="/members">부원 소개</a></li>
+            <li class="nav-item"><a href="/application">지원하기</a></li>
+            <li class="nav-item"><a href="/board">QnA</a></li>
+            <li class="nav-item"><a href="/records">활동기록</a></li>
+            <li class="nav-item"><a href="/upload">질문하기</a></li>
+        </ul>
+        <div id="nav-logo">
+            <a href="/"><img src="/images/logo.png" alt="" class="logo-img"></a>
+        </div>
+    </nav>
+</header>
 
-    <main id="main">
-        <section id="top-section">
-            <iconify-icon icon="charm:arrow-left" class="prev-icon"></iconify-icon>
-            <h1 class="main-title">
-                2024 앱앤미 부원을 <br>
-                모집합니다!
-            </h1>
-            <h6 class="sub-title">앱앤미가 여러분을 기다리고 있습니다!!</h6>
-            <hr class="divide-line">
-        </section>
-        <section id="main-section">
-            <form action="/application" method="post">
-                <div class="input-container">
-                    <label for="student_id">
-                        학번
-                        <div class="asterisk">*</div>
-                    </label>
-                    <input type="text" name="hakbun" id="student_id" class="text-field"
-                        oninput="this.value = this.value.replace(/[^0-9]/g, '');" placeholder="ex) 1101" autofocus>
-                </div>
+<main id="main">
+    <section id="top-section">
+        <iconify-icon icon="charm:arrow-left" class="prev-icon"></iconify-icon>
+        <h1 class="main-title">
+            2024 앱앤미 부원을 <br>
+            모집합니다!
+        </h1>
+        <h6 class="sub-title">앱앤미가 여러분을 기다리고 있습니다!!</h6>
+        <hr class="divide-line">
+    </section>
+    <section id="main-section">
+        <form action="/application" method="post">
+            <div class="input-container">
+                <label for="student_id">
+                    학번
+                    <div class="asterisk">*</div>
+                </label>
+                <input type="text" name="hakbun" id="student_id" class="text-field"
+                       oninput="this.value = this.value.replace(/[^0-9]/g, '');" placeholder="ex) 1101" autofocus>
+            </div>
+            <div class="input-container">
+                <label for="name">
+                    이름
+                    <div class="asterisk">*</div>
+                </label>
+                <input type="text" name="name" id="name" class="text-field" placeholder="ex) 김미림">
+            </div>
+            <div id="input-with-radio">
                 <div class="input-container">
                     <label for="name">
-                        이름
+                        전화번호
                         <div class="asterisk">*</div>
                     </label>
-                    <input type="text" name="name" id="name" class="text-field" placeholder="ex) 김미림">
+                    <input type="text" name="phone_number" id="phone_number" class="text-field"
+                           oninput="this.value = this.value.replace(/[^0-9]/g, '');" placeholder="ex) 01012345678">
                 </div>
-                <div id="input-with-radio">
-                    <div class="input-container">
-                        <label for="name">
-                            전화번호
-                            <div class="asterisk">*</div>
-                        </label>
-                        <input type="text" name="phone_number" id="phone_number" class="text-field"
-                            oninput="this.value = this.value.replace(/[^0-9]/g, '');" placeholder="ex) 01012345678">
-                    </div>
-                    <div class="input-container">
-                        <label for="gender">성별</label>
-                        <div class="radio-container">
-                            <div class="radio-item">
-                                <input type="radio" name="gender" value="male" checked />
-                                <span>남</span>
-                            </div>
-                            <div class="radio-item">
-                                <input type="radio" name="gender" value="female" />
-                                <span>여</span>
-                            </div>
+                <div class="input-container">
+                    <label for="gender">성별</label>
+                    <div class="radio-container">
+                        <div class="radio-item">
+                            <input type="radio" name="gender" value="male" checked/>
+                            <span>남</span>
                         </div>
-                    </div>
-                    <div class="input-container">
-                        <label for="gender">기숙사 여부</label>
-                        <div class="radio-container">
-                            <div class="radio-item">
-                                <input type="radio" name="dormitory_resident" value="1" checked />
-                                <span>기숙사생</span>
-                            </div>
-                            <div class="radio-item">
-                                <input type="radio" name="dormitory_resident" value="0" />
-                                <span>통학생</span>
-                            </div>
+                        <div class="radio-item">
+                            <input type="radio" name="gender" value="female"/>
+                            <span>여</span>
                         </div>
                     </div>
                 </div>
                 <div class="input-container">
-                    <label for="five_characters_representation">
-                        나를 다섯 글자로 표현한다면?
-                        <div class="asterisk">*</div>
-                    </label>
-                    <input type="text" name="five_characters_representation" id="five_characters_representation"
-                        class="text-field" placeholder="ex) 열정만수르">
+                    <label for="gender">기숙사 여부</label>
+                    <div class="radio-container">
+                        <div class="radio-item">
+                            <input type="radio" name="dormitory_resident" value="1" checked/>
+                            <span>기숙사생</span>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" name="dormitory_resident" value="0"/>
+                            <span>통학생</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="input-container">
-                    <label for="application_motivation">
-                        지원동기
-                        <div class="asterisk">*</div>
-                    </label>
-                    <textarea name="application_motivation" id="application_motivation" class="text-field"
-                        maxlength="300" placeholder="300자 이내로 작성해주세요."></textarea>
-                </div>
-                <input type="submit" value="지원하기" class="main-button">
-            </form>
-        </section>
-    </main>
-
-    <footer id="footer">
-        <div class="logos">
-            <div class="anm-logo">
-                <img src="/images/logo.png" alt="앱앤미로고">
-                <span>App&Me</span>
             </div>
-            <div class="sns-logo">
-                <a href="https://www.instagram.com/app_and_me/">
-                    <img src="/images/instagram.png" alt="">
-                </a>
+            <div class="input-container">
+                <label for="five_characters_representation">
+                    나를 다섯 글자로 표현한다면?
+                    <div class="asterisk">*</div>
+                </label>
+                <input type="text" name="five_characters_representation" id="five_characters_representation"
+                       class="text-field" placeholder="ex) 열정만수르">
             </div>
+            <div class="input-container">
+                <label for="application_motivation">
+                    지원동기
+                    <div class="asterisk">*</div>
+                </label>
+                <textarea name="application_motivation" id="application_motivation" class="text-field"
+                          maxlength="300" placeholder="300자 이내로 작성해주세요."></textarea>
+            </div>
+            <input type="submit" value="지원하기" class="main-button">
+        </form>
+    </section>
+</main>
+
+<footer id="footer">
+    <div class="logos">
+        <div class="anm-logo">
+            <img src="/images/logo.png" alt="앱앤미로고">
+            <span>App&Me</span>
         </div>
-        <div class="info">
-            <div>문의전화: 010-0000-0000</div>
-            <div>이메일 : w2218@e-mirim.hs.kr</div>
+        <div class="sns-logo">
+            <a href="https://www.instagram.com/app_and_me/"><img src="/images/instagram.png" alt=""></a>
+            <a href="https://github.com/app-and-me"><img src="/images/github.png" alt=""></a>
         </div>
-        <hr>
-        <div class="code">©Team App&Me</div>
-    </footer>
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.querySelector('form');
+    </div>
+    <div class="info">
+        <div>문의전화: 010-0000-0000</div>
+        <div>이메일 : w2218@e-mirim.hs.kr</div>
+    </div>
+    <hr>
+    <div class="code">©Team App&Me</div>
+</footer>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.querySelector('form');
 
-            // 유효성 검사
-            form.addEventListener('submit', function (event) {
-                const studentId = document.getElementById('student_id').value;
-                const name = document.getElementById('name').value;
-                const phoneNumber = document.getElementById('phone_number').value;
-                const fiveCharactersRepresentation = document.getElementById('five_characters_representation').value;
-                const applicationMotivation = document.getElementById('application_motivation').value;
+        // 유효성 검사
+        form.addEventListener('submit', function (event) {
+            const studentId = document.getElementById('student_id').value;
+            const name = document.getElementById('name').value;
+            const phoneNumber = document.getElementById('phone_number').value;
+            const fiveCharactersRepresentation = document.getElementById('five_characters_representation').value;
+            const applicationMotivation = document.getElementById('application_motivation').value;
 
-                // 필드 중 하나라도 비어 있다면
-                if (!studentId || !name || !phoneNumber || !fiveCharactersRepresentation || !applicationMotivation) {
-                    event.preventDefault();
-                    alert('모든 필드를 채워주세요! 🙏');
-                    return;
-                }
-
-                // 학번이 4자리가 아니라면
-                if (studentId.length !== 4) {
-                    event.preventDefault();
-                    alert('학번은 반드시 4자리여야 합니다! 🙏');
-                    return;
-                }
-
-                // 이름이 한국어가 아니라면
-                if (!isKorean(name)) {
-                    event.preventDefault();
-                    alert('이름은 반드시 한글로 작성해주세요! 🙏');
-                }
-
-                if (!isValidPhoneNumber(phoneNumber)) {
-                    event.preventDefault();
-                    alert('전화번호는 010으로 시작하는 13자리 숫자로 작성해야 합니다! 🙏');
-                    return;
-                }
-
-                // 다섯글자가 아니라면
-                if (fiveCharactersRepresentation.length !== 5) {
-                    event.preventDefault();
-                    alert('오직 다섯 글자로만 자신의 표현해주세요! 🙏');
-                    return;
-                }
-            });
-
-            // 한국어인지 판별
-            function isKorean(str) {
-                const koreanRegex = /^[가-힣]+$/;
-                return koreanRegex.test(str);
+            // 필드 중 하나라도 비어 있다면
+            if (!studentId || !name || !phoneNumber || !fiveCharactersRepresentation || !applicationMotivation) {
+                event.preventDefault();
+                alert('모든 필드를 채워주세요! 🙏');
+                return;
             }
 
-            // 전화번호 판별
-            function isValidPhoneNumber(phoneNumber) {
-                const phoneRegex = /^010\d{8}$/;
-                return phoneRegex.test(phoneNumber);
+            // 학번이 4자리가 아니라면
+            if (studentId.length !== 4) {
+                event.preventDefault();
+                alert('학번은 반드시 4자리여야 합니다! 🙏');
+                return;
+            }
+
+            // 이름이 한국어가 아니라면
+            if (!isKorean(name)) {
+                event.preventDefault();
+                alert('이름은 반드시 한글로 작성해주세요! 🙏');
+            }
+
+            if (!isValidPhoneNumber(phoneNumber)) {
+                event.preventDefault();
+                alert('전화번호는 010으로 시작하는 13자리 숫자로 작성해야 합니다! 🙏');
+                return;
+            }
+
+            // 다섯글자가 아니라면
+            if (fiveCharactersRepresentation.length !== 5) {
+                event.preventDefault();
+                alert('오직 다섯 글자로만 자신의 표현해주세요! 🙏');
+                return;
             }
         });
-    </script>
+
+        // 한국어인지 판별
+        function isKorean(str) {
+            const koreanRegex = /^[가-힣]+$/;
+            return koreanRegex.test(str);
+        }
+
+        // 전화번호 판별
+        function isValidPhoneNumber(phoneNumber) {
+            const phoneRegex = /^010\d{8}$/;
+            return phoneRegex.test(phoneNumber);
+        }
+    });
+</script>
 </body>
 
 </html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>앱앤미</title>
     <link rel="icon" href="/favicon.ico">
@@ -15,92 +15,95 @@
 </head>
 
 <body>
-    <header id="header">
-        <nav id="nav">
-            <ul id="nav-menu">
-                <li class="nav-item"><a href="/members">부원 소개</a></li>
-                <li class="nav-item"><a href="/application">지원하기</a></li>
-                <li class="nav-item"><a href="/board">QnA</a></li>
-                <li class="nav-item"><a href="/records">활동기록</a> </li>
-                <li class="nav-item"><a href="/upload">질문하기</a> </li>
-            </ul>
-            <div id="nav-logo">
-                <a href="/"><img src="/images/logo.png" alt="" class="logo-img"></a>
-            </div>
-        </nav>
-    </header>
-    <main id="main">
-        <div class="count"><div class="count">전체 <%= posts.length %>건</div></div>
-        <table>
-            <thead class="table-header">
-                <tr class="table-header-row">
-                    <th class="number">번호</th>
-                    <th class="title">제목</th>
-                    <th class="date">작성일</th>
-                    <th class="complete">답변 여부</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% posts.forEach(post => { %>
-                    <tr class="row" onclick="window.open('/board/<%= post.id %>', '_top')">
-                    <td lass="number"><%= post.id %></td>
-                    <td class="title"><%= post.title %></td>
-                    <td class="date"><%= post.question_date %></td>
-                    <td class="complete complete<%= post.answered %>"><%= post.answered ? '답변 완료' :  '답변 준비중'%></td>
-                </tr>
-                <% }) %>
-            </tbody>
-        </table>
-        <!-- <div class="page-nav">
-            <div class="icons">
-                <div class="max-prev"><iconify-icon  class="icon" icon="material-symbols:keyboard-double-arrow-left-rounded"></iconify-icon></div>
-                <div class="prev"><iconify-icon class="icon" icon="iconamoon:arrow-left-2-light"></iconify-icon></div>
-            </div>
-            <div class="pages">
-                <div class="page current">1</div>
-                <div class="page">2</div>
-                <div class="page">3</div>
-                <div class="page">4</div>
-                <div class="page">5</div>
-                <div class="page">6</div>
-                <div class="page">7</div>
-                <div class="page">8</div>
-                <div class="page">9</div>
-            </div>
-            <div class="icons">
-                <div class="next"><iconify-icon class="icon" icon="iconamoon:arrow-right-2-light"></div>
-                <div class="max-next"><iconify-icon class="icon" icon="material-symbols:keyboard-double-arrow-right-rounded"></iconify-icon></div>
-            </div>
-        </div> -->
-    </main>
-    <footer id="footer">
-        <div class="logos">
-            <div class="anm-logo">
-                <img src="/images/logo.png" alt="앱앤미로고">
-                <span>App&Me</span>
-            </div>
-            <div class="sns-logo">
-                <img src="/images/instagram.png" alt="">
-            </div>
+<header id="header">
+    <nav id="nav">
+        <ul id="nav-menu">
+            <li class="nav-item"><a href="/members">부원 소개</a></li>
+            <li class="nav-item"><a href="/application">지원하기</a></li>
+            <li class="nav-item"><a href="/board">QnA</a></li>
+            <li class="nav-item"><a href="/records">활동기록</a></li>
+            <li class="nav-item"><a href="/upload">질문하기</a></li>
+        </ul>
+        <div id="nav-logo">
+            <a href="/"><img src="/images/logo.png" alt="" class="logo-img"></a>
         </div>
-        <div class="info">
-            <div>문의전화: 010-0000-0000</div>
-            <div>이메일 : w2218@e-mirim.hs.kr</div>
+    </nav>
+</header>
+<main id="main">
+    <div class="count">
+        <div class="count">전체 <%= posts.length %>건</div>
+    </div>
+    <table>
+        <thead class="table-header">
+        <tr class="table-header-row">
+            <th class="number">번호</th>
+            <th class="title">제목</th>
+            <th class="date">작성일</th>
+            <th class="complete">답변 여부</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% posts.forEach(post => { %>
+            <tr class="row" onclick="window.open('/board/<%= post.id %>', '_top')">
+                <td lass="number"><%= post.id %></td>
+                <td class="title"><%= post.title %></td>
+                <td class="date"><%= post.question_date %></td>
+                <td class="complete complete"><%= post.isAnswered ? '답변 완료' : '답변 준비중' %></td>
+            </tr>
+        <% }) %>
+        </tbody>
+    </table>
+    <!-- <div class="page-nav">
+        <div class="icons">
+            <div class="max-prev"><iconify-icon  class="icon" icon="material-symbols:keyboard-double-arrow-left-rounded"></iconify-icon></div>
+            <div class="prev"><iconify-icon class="icon" icon="iconamoon:arrow-left-2-light"></iconify-icon></div>
         </div>
-        <hr>
-        <div class="code">©Team App&Me</div>
-    </footer>
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <script>
-        function formatDate(inputDate) {
-            const date = new Date(inputDate);
+        <div class="pages">
+            <div class="page current">1</div>
+            <div class="page">2</div>
+            <div class="page">3</div>
+            <div class="page">4</div>
+            <div class="page">5</div>
+            <div class="page">6</div>
+            <div class="page">7</div>
+            <div class="page">8</div>
+            <div class="page">9</div>
+        </div>
+        <div class="icons">
+            <div class="next"><iconify-icon class="icon" icon="iconamoon:arrow-right-2-light"></div>
+            <div class="max-next"><iconify-icon class="icon" icon="material-symbols:keyboard-double-arrow-right-rounded"></iconify-icon></div>
+        </div>
+    </div> -->
+</main>
+<footer id="footer">
+    <div class="logos">
+        <div class="anm-logo">
+            <img src="/images/logo.png" alt="앱앤미로고">
+            <span>App&Me</span>
+        </div>
+        <div class="sns-logo">
+            <a href="https://www.instagram.com/app_and_me/"><img src="/images/instagram.png" alt=""></a>
+            <a href="https://github.com/app-and-me"><img src="/images/github.png" alt=""></a>
+        </div>
+    </div>
+    <div class="info">
+        <div>문의전화: 010-0000-0000</div>
+        <div>이메일 : w2218@e-mirim.hs.kr</div>
+    </div>
+    <hr>
+    <div class="code">©Team App&Me</div>
+</footer>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<script>
+    function formatDate(inputDate) {
+        const date = new Date(inputDate);
 
-            const year = date.getFullYear();
-            const month = String(date.getMonth() + 1).padStart(2, '0');
-            const day = String(date.getDate()).padStart(2, '0');
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
 
-            return `${year}-${month}-${day}`;
-        }
-    </script>
+        return `${year}-${month}-${day}`;
+    }
+</script>
 </body>
 </html>

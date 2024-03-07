@@ -16,6 +16,9 @@
 
 <body>
 <header id="header">
+    <div id="menu-toggle" class="menu-icon" onclick="toggleMenus()">
+        <iconify-icon icon="fluent:list-20-filled" width="1.2rem" height="1.2rem"></iconify-icon>
+    </div>
     <nav id="nav">
         <ul id="nav-menu">
             <li class="nav-item"><a href="/members">부원 소개</a></li>
@@ -96,7 +99,8 @@
             <span>App&Me</span>
         </div>
         <div class="sns-logo">
-            <img src="/images/instagram.png" alt="">
+            <a href="https://www.instagram.com/app_and_me/"><img src="/images/instagram.png" alt=""></a>
+            <a href="https://github.com/app-and-me"><img src="/images/github.png" alt=""></a>
         </div>
     </div>
     <div class="info">
@@ -107,11 +111,17 @@
     <div class="code">©Team App&Me</div>
 </footer>
 <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-
 <script>
+    const menuElement = document.getElementById("nav-menu");
+
     function moveToPost(postId) {
         const url = `/board/${postId}`;
         window.open(url, '_top');
+    }
+
+    function toggleMenus() {
+        menuElement.classList.toggle("showing");
+        console.log('click')
     }
 </script>
 </body>

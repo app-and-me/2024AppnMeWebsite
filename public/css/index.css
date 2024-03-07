@@ -2,6 +2,10 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+body {
+    scroll-behavior: smooth;
+}
+
 #main {
     width: 100%;
     display: flex;

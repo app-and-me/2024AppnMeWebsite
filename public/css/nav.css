@@ -16,6 +16,11 @@
     align-items: center;
 }
 
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
 #nav-menu {
     display: flex;
     gap: 3.6rem;
@@ -36,4 +41,53 @@
     object-fit: cover;
     width: 100%;
     height: 100%;
+}
+
+/* 태블릿 & 모바일*/
+@media only screen and (max-width: 1024px) {
+    #header {
+        padding: 0;
+    }
+
+    #nav {
+        width: 100%;
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+        align-items: flex-end;
+        height: fit-content;
+        gap: 20px;
+        transition: 0.4s;
+    }
+
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+
+    #nav-menu.showing {
+        display: flex;
+    }
+
+    .nav-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-bottom: 1px solid rgba(255, 141, 175, 0.9);
+    }
+
+    #nav-logo {
+        margin: 0 24px 0 0;
+    }
+
+    .menu-icon {
+        display: block;
+        margin: 0 0 0 24px;
+        transform: translateY(26px);
+    }
+
 }
