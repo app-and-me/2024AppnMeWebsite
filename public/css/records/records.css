@@ -4,6 +4,7 @@
     padding: 0 15vw 10vh 15vw;
     width: calc(100% - 30vw);
     gap: 12vw;
+    overflow-x: hidden;
 }
 
 .section {
@@ -47,4 +48,28 @@ img {
 .sub-title {
     font-weight: 400;
     font-size: 1.2rem;
+}
+
+@media screen and (max-width: 1024px) {
+
+    #main {
+        gap: 35px;
+        padding: 0 20px 10vh 20px;
+        width: calc(100% - 40px);
+        flex-direction: column;
+    }
+
+    .section-title {
+        display: none;
+    }
+
+    .majors {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .major {
+        width: 43vw;
+        height: 80vw;
+    }
 }
