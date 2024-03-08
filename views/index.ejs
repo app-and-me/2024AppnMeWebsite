@@ -16,6 +16,9 @@
 
 <body>
 <header id="header">
+    <div id="menu-toggle" class="menu-icon" onclick="toggleMenu()">
+        <iconify-icon icon="fluent:list-20-filled" width="1.2rem" height="1.2rem"></iconify-icon>
+    </div>
     <nav id="nav">
         <ul id="nav-menu">
             <li class="nav-item"><a href="/members">부원 소개</a></li>
@@ -33,7 +36,7 @@
 <main id="main">
     <section class="top-section">
         <h1 class="identity">From User To Maker</h1>
-        <h6 class="sub-identity">앱앤미는 차세대 개발 흐름에 따른 기술들을 익히고 연구하며 실제로 서비스를 구현해서 <br>
+        <h6 class="sub-identity">앱앤미는 차세대 개발 흐름에 따른 기술들을 익히고 연구하며 실제로 서비스를 구현해서
             학교 및 사회에 기여하는 전공 동아리입니다</h6>
     </section>
     <iconify-icon icon="ep:arrow-down" id="arrow-down" onclick="scrollToSection('.middle-section')">
@@ -129,6 +132,12 @@
         // bottom 클래스 제거, 추가
         topImage.classList.add('bottom');
         bottomImage.classList.remove('bottom');
+    }
+
+    const menuElement = document.getElementById("nav-menu");
+
+    function toggleMenu() {
+        menuElement.classList.toggle("showing");
     }
 </script>
 </body>
