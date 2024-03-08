@@ -24,6 +24,8 @@ body {
 
 .identity {
     color: var(--primary-500);
+    width: 80vw;
+    text-align: center;
     font-size: 6rem;
     font-weight: 600;
     line-height: 160%;

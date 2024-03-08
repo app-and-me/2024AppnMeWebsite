@@ -22,13 +22,15 @@
 }
 
 #nav-menu {
+    position: relative;
+    z-index: 100;
     display: flex;
     gap: 3.6rem;
 }
 
 .nav-item,
 .nav-item > a {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     cursor: pointer;
 }
 
@@ -41,6 +43,15 @@
     object-fit: cover;
     width: 100%;
     height: 100%;
+}
+
+#remove-menu {
+    display: none;
+}
+
+#menu-icon-image {
+    width: 24px;
+    height: 24px;
 }
 
 /* 태블릿 & 모바일*/
@@ -62,8 +73,11 @@
     #nav-menu {
         display: none;
         flex-direction: column;
+        align-self: flex-start;
         gap: 0;
-        width: 100%;
+        width: 85vw;
+        height: 100vh;
+        background-color: #fff;
     }
 
     #nav-menu.showing {
@@ -72,12 +86,12 @@
 
     .nav-item {
         display: flex;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
+        padding: 0 0 0 22px;
         width: 100%;
         height: 50px;
-        background-color: rgba(255, 255, 255, 0.9);
-        border-bottom: 1px solid rgba(255, 141, 175, 0.9);
+        cursor: pointer;
     }
 
     #nav-logo {
@@ -90,4 +104,21 @@
         transform: translateY(26px);
     }
 
+    #remove-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 15vw;
+        height: 100vh;
+        z-index: 300;
+        background-color: var(--primary-500);
+    }
+
+    #remove-menu.showing {
+        display: flex;
+    }
+
+    .disable {
+        display: none;
+    }
 }

@@ -16,8 +16,8 @@
 
 <body>
 <header id="header">
-    <div id="menu-toggle" class="menu-icon" onclick="toggleMenus()">
-        <iconify-icon icon="fluent:list-20-filled" width="1.2rem" height="1.2rem"></iconify-icon>
+    <div id="menu-toggle" class="menu-icon" onclick="toggleMenu()">
+        <img id="menu-icon-image" src="/images/menuiconimage.png"/>
     </div>
     <nav id="nav">
         <ul id="nav-menu">
@@ -27,6 +27,8 @@
             <li class="nav-item"><a href="/records">활동기록</a></li>
             <li class="nav-item"><a href="/upload">질문하기</a></li>
         </ul>
+        <div id="remove-menu">
+        </div>
         <div id="nav-logo">
             <a href="/"><img src="/images/logo.png" alt="" class="logo-img"></a>
         </div>
@@ -122,6 +124,21 @@
     function toggleMenus() {
         menuElement.classList.toggle("showing");
         console.log('click')
+    }
+
+    const menuElement = document.getElementById("nav-menu");
+    const removeDiv = document.getElementById("remove-menu");
+    const menuIcon = document.getElementById("menu-icon-image");
+    let isShowing = false;
+
+    function toggleMenu() {
+        menuElement.classList.toggle("showing");
+        removeDiv.classList.toggle("showing");
+        isShowing = !isShowing;
+        if (isShowing) menuIcon.src = "/images/cancel.png";
+        else menuIcon.src = "/images/menuiconimage.png";
+
+        console.log(menuIcon);
     }
 </script>
 </body>

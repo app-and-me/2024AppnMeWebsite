@@ -16,6 +16,9 @@
 
 <body>
 <header id="header">
+    <div id="menu-toggle" class="menu-icon" onclick="toggleMenu()">
+        <img id="menu-icon-image" src="/images/menuiconimage.png"/>
+    </div>
     <nav id="nav">
         <ul id="nav-menu">
             <li class="nav-item"><a href="/members">부원 소개</a></li>
@@ -24,6 +27,8 @@
             <li class="nav-item"><a href="/records">활동기록</a></li>
             <li class="nav-item"><a href="/upload">질문하기</a></li>
         </ul>
+        <div id="remove-menu">
+        </div>
         <div id="nav-logo">
             <a href="/"><img src="/images/logo.png" alt="" class="logo-img"></a>
         </div>
@@ -84,6 +89,22 @@
     <div class="code">©Team App&Me</div>
 </footer>
 <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<script>
+    const menuElement = document.getElementById("nav-menu");
+    const removeDiv = document.getElementById("remove-menu");
+    const menuIcon = document.getElementById("menu-icon-image");
+    let isShowing = false;
+
+    function toggleMenu() {
+        menuElement.classList.toggle("showing");
+        removeDiv.classList.toggle("showing");
+        isShowing = !isShowing;
+        if (isShowing) menuIcon.src = "/images/cancel.png";
+        else menuIcon.src = "/images/menuiconimage.png";
+
+        console.log(menuIcon);
+    }
+</script>
 </body>
 
 </html>
