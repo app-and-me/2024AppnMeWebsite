@@ -183,43 +183,43 @@
           },
           {
             "image": "/images/records/12dev/배주연1.jpeg",
-            "label": "2023 AI Friends School 이수"
+            "label": "2023 앱잼 우수상"
           }
         ],
         [
           {
             "image": "/images/records/12dev/윤주영0.jpeg",
-            "label": "2023 앱잼 우수상"
+            "label": "2023 AI Friends School 이수"
           },
           {
             "image": "/images/records/12dev/윤주영1.jpeg",
-            "label": "2023 미림해커톤 수료증"
+            "label": "2023 MS Azure 수료"
           },
           {
             "image": "/images/records/12dev/윤주영2.jpeg",
-            "label": "2023 디지털 새싹캠프 수료증"
+            "label": "2023 디지털 새싹캠프 수료"
           },
           {
-            "image": "/images/records/12dev/윤주영2.jpeg",
-            "label": "2023 MS Azure 수료증"
+            "image": "/images/records/12dev/윤주영3.jpeg",
+            "label": "2023 미림 해커톤 수료"
           },
           {
-            "image": "/images/records/12dev/윤주영2.jpeg",
-            "label": "2023 AI Friends School 이수"
+            "image": "/images/records/12dev/윤주영4.jpeg",
+            "label": "2023 앱잼 우수상"
           }
         ],
         [
           {
             "image": "/images/records/12dev/추다율0.jpeg",
-            "label": "2023 STAC 우수상"
+            "label": "2023 AI Friends School 이수"
           },
           {
             "image": "/images/records/12dev/추다율1.jpeg",
-            "label": "2023 STAC 우수상"
+            "label": "2023 MS Azure 수료"
           },
           {
             "image": "/images/records/12dev/추다율2.jpeg",
-            "label": "2023 창의아이디어 경진대회 교내 금상"
+            "label": "2023 미림 해커톤 수료"
           },
           {
             "image": "/images/records/12dev/추다율3.jpeg",
@@ -227,11 +227,11 @@
           },
           {
             "image": "/images/records/12dev/추다율4.jpeg",
-            "label": "2023 미림 해커톤 수료"
+            "label": "2023 창의아이디어 경진대회 교내 금상"
           },
           {
-            "image": "/images/records/12dev/추다율5.jpeg",
-            "label": "2023 AI Friends School 이수"
+            "image": "/images/records/12dev/황유진0.jpeg",
+            "label": "2023 STAC 우수상"
           }
         ],
         [
@@ -252,6 +252,10 @@
           {
             "image": "/images/records/12design/하지민0.jpeg",
             "label": "2023 디지털 새싹캠프 수료증"
+          },
+          {
+            "image": "/images/records/12dev/황유진0.jpeg",
+            "label": "2023 STAC 우수상"
           }
         ]
       ]
