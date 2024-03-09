@@ -4,7 +4,7 @@
 }
 
 #top-section {
-    margin: 0 15vw 0 15vw; 
+    margin: 0 15vw 0 15vw;
 }
 
 .prev-icon {
@@ -46,7 +46,7 @@ form {
 }
 
 .input-container {
-    width: 100%;    
+    width: 100%;
 }
 
 label {
@@ -101,10 +101,12 @@ textarea {
 #input-with-radio .input-container {
     margin-right: 4vw;
 }
+
 #input-with-radio input[type="text"] {
     width: 33vw;
 }
-.main-button:hover {    
+
+.main-button:hover {
     background-color: var(--primary-500);
     color: var(--white);
 }
@@ -130,4 +132,42 @@ textarea {
 [type="radio"]:checked {
     border: 0.25em solid var(--gray-200);
     background-color: var(--primary-500);
+}
+
+@media screen and (max-width: 1024px) {
+    #top-section {
+        margin: 0 20px 0 20px;
+    }
+
+    #main-section {
+        margin: 20px 20px 6vh 20px;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    #input-with-radio {
+        flex-direction: column;
+        gap: 20px;
+        justify-content: flex-start;
+    }
+
+    textarea {
+        height: 300px;
+    }
+
+
+    #input-with-radio .input-container {
+        width: calc(100% - 20px);
+        margin-right: 0;
+    }
+
+    #input-with-radio input[type="text"] {
+        width: 100%;
+    }
+
+    .radio-container {
+        gap: 62px;
+    }
 }
