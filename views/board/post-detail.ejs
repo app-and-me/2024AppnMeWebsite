@@ -16,8 +16,8 @@
 
 <body>
 <header id="header">
-    <div id="menu-toggle" class="menu-icon" onclick="toggleMenus()">
-        <iconify-icon icon="fluent:list-20-filled" width="1.2rem" height="1.2rem"></iconify-icon>
+    <div id="menu-toggle" class="menu-icon" onclick="toggleMenu()">
+        <img id="menu-icon-image" src="/images/menuiconimage.png"/>
     </div>
     <nav id="nav">
         <ul id="nav-menu">
@@ -27,6 +27,8 @@
             <li class="nav-item"><a href="/records">활동기록</a></li>
             <li class="nav-item"><a href="/upload">질문하기</a></li>
         </ul>
+        <div id="remove-menu">
+        </div>
         <div id="nav-logo">
             <a href="/"><img src="/images/logo.png" alt="" class="logo-img"></a>
         </div>
@@ -38,7 +40,7 @@
             <div class="q-content">
                 <div class="q-mark">Q.</div>
                 <div class="title">
-                    <%= post.title %>
+                    <%= post.content %>
                 </div>
             </div>
             <div class="post-info">
@@ -94,7 +96,7 @@
 </main>
 <footer id="footer">
     <div class="logos">
-        <div class="anm-logo">
+        <div class="anm-logo" onclick="window.open('/', '_top')">
             <img src="/images/logo.png" alt="앱앤미로고">
             <span>App&Me</span>
         </div>
@@ -104,8 +106,8 @@
         </div>
     </div>
     <div class="info">
-        <div>문의전화: 010-0000-0000</div>
-        <div>이메일 : w2218@e-mirim.hs.kr</div>
+        <div>문의전화: 010-3955-8103(소프트웨어과 추다율), 010-3501-0582(디자인과 하지민)</div>
+        <div>이메일 : s2317@e-mirim.hs.kr(소프트웨어과 추다율), d2335@e-mirim.hs.kr(디자인과 하지민)</div>
     </div>
     <hr>
     <div class="code">©Team App&Me</div>
@@ -119,9 +121,18 @@
         window.open(url, '_top');
     }
 
-    function toggleMenus() {
+    const removeDiv = document.getElementById("remove-menu");
+    const menuIcon = document.getElementById("menu-icon-image");
+    let isShowing = false;
+
+    function toggleMenu() {
         menuElement.classList.toggle("showing");
-        console.log('click')
+        removeDiv.classList.toggle("showing");
+        isShowing = !isShowing;
+        if (isShowing) menuIcon.src = "/images/cancel.png";
+        else menuIcon.src = "/images/menuiconimage.png";
+
+        console.log(menuIcon);
     }
 </script>
 </body>

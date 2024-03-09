@@ -60,3 +60,9 @@
     font-style: normal;
     font-weight: 400;
 }
+
+@media screen and (max-width: 1024px) {
+    #footer {
+        padding: 56px 20px;
+    }
+}

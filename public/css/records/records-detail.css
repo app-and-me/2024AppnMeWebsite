@@ -88,3 +88,39 @@
     text-align: center;
 }
 
+@media screen and (max-width: 1024px) {
+    #main {
+        margin-top: 80px;
+        width: calc(100% - 40px);
+        padding: 0 20px 40vh 20px;
+    }
+
+    .season {
+        display: none;
+    }
+
+    .name-title {
+        display: none;
+    }
+
+    .name-list {
+        width: calc(100% - 40px);
+        padding: 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: fit-content;
+        min-height: 50px;
+    }
+
+    .main-content {
+        flex-direction: column;
+    }
+
+    .achieve-container {
+        gap: 3vw;
+    }
+
+    .achieve-item {
+        width: 40vw;
+    }
+}

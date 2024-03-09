@@ -24,13 +24,15 @@ body {
 
 .identity {
     color: var(--primary-500);
+    width: 80vw;
+    text-align: center;
     font-size: 6rem;
     font-weight: 600;
     line-height: 160%;
 }
 
 .sub-identity {
-    width: 54vw;
+    width: 44vw;
     text-align: center;
     color: var(--gray-700);
     font-size: 1.6rem;
@@ -111,3 +113,66 @@ body {
     line-height: 160%;
     color: var(--gray-700)
 }
+
+/* 태블릿 & 모바일*/
+@media screen and (max-width: 1024px) {
+
+    .identity {
+        font-size: 2.5rem;
+    }
+
+    .sub-identity {
+        font-size: 1rem;
+        width: 80vw;
+    }
+
+    .middle-section {
+        margin: 0 20px 20vh 20px;
+        width: calc(100% - 40px);
+        flex-direction: column;
+        height: fit-content;
+        gap: 10vh;
+        align-items: flex-start;
+    }
+
+    .item {
+        width: calc(100% - 80px);
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #first,
+    #third {
+        transform: translate(0, 0);
+    }
+
+    #second {
+        transform: translate(0, 0);
+        align-self: flex-end;
+        align-items: flex-end;
+    }
+
+    #second .image.top {
+        transform: translate(-100%,  -20%);
+    }
+
+
+    #second .image.bottom {
+        transform: translate(-110%, 0);
+    }
+
+    .image {
+        position: absolute;
+        max-width: 600px;
+        width: 70vw;
+        height: 35vw;
+        object-fit: cover;
+    }
+
+    .title {
+        margin-top: calc(35vw + 20px);
+    }
+
+}
+
