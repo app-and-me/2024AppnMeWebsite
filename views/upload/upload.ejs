@@ -47,24 +47,12 @@
     <section id="main-section">
         <form action="/upload" method="post">
             <div class="input-container">
-                <label for="student_id">
-                    제목
-                    <div class="asterisk">*</div>
-                </label>
-                <input
-                        type="text"
-                        name="title"
-                        class="text-field"
-                        placeholder="글의 제목을 입력해 주세요."
-                        autofocus>
-            </div>
-            <div class="input-container">
                 <label for="application_motivation">
                     질문 내용
                     <div class="asterisk">*</div>
                 </label>
-                <textarea name="content" id="application_motivation" class="text-field"
-                          maxlength="500" placeholder="500자 이내로 작성해주세요."></textarea>
+                <textarea name="content" id="content" class="text-field"
+                          maxlength="300" placeholder="300자 이내로 작성해주세요."></textarea>
             </div>
             <input type="submit" value="질문하기" class="main-button">
         </form>
@@ -90,6 +78,19 @@
 </footer>
 <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector('form');
+
+        form.addEventListener('submit', function (event) {
+            const content = document.getElementById('content').value.trim();
+
+            // Check if the content is empty
+            if (content === '') {
+                alert('질문 내용을 작성해주세요.');
+                event.preventDefault(); // Prevent the form from being submitted
+            }
+        });
+    });
     const menuElement = document.getElementById("nav-menu");
     const removeDiv = document.getElementById("remove-menu");
     const menuIcon = document.getElementById("menu-icon-image");

@@ -40,7 +40,7 @@
             <div class="q-content">
                 <div class="q-mark">Q.</div>
                 <div class="title">
-                    <%= post.title %>
+                    <%= post.content %>
                 </div>
             </div>
             <div class="post-info">
@@ -121,12 +121,6 @@
         window.open(url, '_top');
     }
 
-    function toggleMenus() {
-        menuElement.classList.toggle("showing");
-        console.log('click')
-    }
-
-    const menuElement = document.getElementById("nav-menu");
     const removeDiv = document.getElementById("remove-menu");
     const menuIcon = document.getElementById("menu-icon-image");
     let isShowing = false;
