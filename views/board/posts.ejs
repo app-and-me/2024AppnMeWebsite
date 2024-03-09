@@ -42,7 +42,7 @@
         <thead class="table-header">
         <tr class="table-header-row">
             <th class="number">번호</th>
-            <th class="title">제목</th>
+            <th class="title">내용</th>
             <th class="date">작성일</th>
             <th class="complete">답변 여부</th>
         </tr>
@@ -51,7 +51,7 @@
         <% posts.forEach(post => { %>
             <tr class="row" onclick="window.open('/board/<%= post.id %>', '_top')">
                 <td lass="number"><%= post.id %></td>
-                <td class="title"><%= post.title %></td>
+                <td class="title"><%= post.content.substring(0, 10) %></td>
                 <td class="date"><%= post.question_date %></td>
                 <td class="complete complete"><%= post.isAnswered ? '답변 완료' : '답변 준비중' %></td>
             </tr>
