@@ -23,7 +23,7 @@
     "web": [
       {
         "name": "황혜경",
-        "image": "/images/members/11/황혜경.png",
+        "image": "/images/members/11/황혜경.JPG",
         "ig": "https://www.instagram.com/hulrud",
         "github": "https://github.com/hyeg0121"
       }
@@ -31,7 +31,7 @@
     "design": [
       {
         "name": "박재희",
-        "image": "/images/members/11/박재희.png",
+        "image": "/images/members/11/박재희.jpeg",
         "ig": "https://www.instagram.com/qorhvmek_52"
       },
       {
@@ -73,12 +73,12 @@
     "design": [
       {
         "name": "송유빈",
-        "image": "/images/members/12/송유빈.png",
+        "image": "/images/members/12/송유빈.jpeg",
         "ig": "https://www.instagram.com/sonououorn.xo/"
       },
       {
         "name": "하지민",
-        "image": "/images/members/12/하지민.png",
+        "image": "/images/members/12/하지민.jpeg",
         "ig": "https://www.instagram.com/hovynq/"
       }
     ]
@@ -132,24 +132,18 @@
           {
             "image": "/images/records/11dev/황혜경5.png",
             "label": "2023 앱잼 장려상"
+          },
+          {
+            "image": "/images/records/11dev/황혜경6.jpg",
+            "label": "미니멘토 1기 수료"
+          },
+          {
+            "image": "/images/records/11dev/황혜경7.jpg",
+            "label": "2024 호주 글로벌 인턴십"
           }
         ]
       ],
       "design": [
-        [
-          {
-            "image": "/images/records/11design/이유진0.png",
-            "label": "2023 앱잼 최우수상"
-          },
-          {
-            "image": "/images/records/11design/이유진1.png",
-            "label": "2023 미림 헤커톤 수료증"
-          },
-          {
-            "image": "/images/records/11design/이유진2.png",
-            "label": "2023 디지털 새싹캠프 수료증"
-          }
-        ],
         [
           {
             "image": "/images/records/11design/박재희0.jpeg",
@@ -171,6 +165,20 @@
             "image": "/images/records/11design/박재희4.jpeg",
             "label": ""
           }
+        ],
+        [
+          {
+            "image": "/images/records/11design/이유진0.png",
+            "label": "2023 앱잼 최우수상"
+          },
+          {
+            "image": "/images/records/11design/이유진1.png",
+            "label": "2023 미림 헤커톤 수료증"
+          },
+          {
+            "image": "/images/records/11design/이유진2.png",
+            "label": "2023 디지털 새싹캠프 수료증"
+          }
         ]
       ]
     },
@@ -183,43 +191,55 @@
           },
           {
             "image": "/images/records/12dev/배주연1.jpeg",
-            "label": "2023 AI Friends School 이수"
+            "label": "2023 앱잼 우수상"
+          },
+          {
+            "image": "/images/records/12dev/배주연3.jpeg",
+            "label": "2023 서울대 SNU RAIP 수료"
+          },
+          {
+            "image": "/images/records/12dev/배주연2.jpeg",
+            "label": "2023 태국 글로벌 인턴십"
           }
         ],
         [
           {
             "image": "/images/records/12dev/윤주영0.jpeg",
-            "label": "2023 앱잼 우수상"
+            "label": "2023 AI Friends School 이수"
           },
           {
             "image": "/images/records/12dev/윤주영1.jpeg",
-            "label": "2023 미림해커톤 수료증"
+            "label": "2023 MS Azure 수료"
           },
           {
             "image": "/images/records/12dev/윤주영2.jpeg",
-            "label": "2023 디지털 새싹캠프 수료증"
+            "label": "2023 디지털 새싹캠프 수료"
           },
           {
-            "image": "/images/records/12dev/윤주영2.jpeg",
-            "label": "2023 MS Azure 수료증"
+            "image": "/images/records/12dev/윤주영3.jpeg",
+            "label": "2023 미림 해커톤 수료"
           },
           {
-            "image": "/images/records/12dev/윤주영2.jpeg",
-            "label": "2023 AI Friends School 이수"
+            "image": "/images/records/12dev/윤주영4.jpeg",
+            "label": "2023 앱잼 우수상"
+          },
+          {
+            "image": "/images/records/12dev/윤주영5.jpeg",
+            "label": "2023 태국 글로벌 인턴십"
           }
         ],
         [
           {
             "image": "/images/records/12dev/추다율0.jpeg",
-            "label": "2023 STAC 우수상"
+            "label": "2023 AI Friends School 이수"
           },
           {
             "image": "/images/records/12dev/추다율1.jpeg",
-            "label": "2023 STAC 우수상"
+            "label": "2023 MS Azure 수료"
           },
           {
             "image": "/images/records/12dev/추다율2.jpeg",
-            "label": "2023 창의아이디어 경진대회 교내 금상"
+            "label": "2023 미림 해커톤 수료"
           },
           {
             "image": "/images/records/12dev/추다율3.jpeg",
@@ -227,17 +247,25 @@
           },
           {
             "image": "/images/records/12dev/추다율4.jpeg",
-            "label": "2023 미림 해커톤 수료"
+            "label": "2023 창의아이디어 경진대회 교내 금상"
           },
           {
-            "image": "/images/records/12dev/추다율5.jpeg",
-            "label": "2023 AI Friends School 이수"
+            "image": "/images/records/12dev/황유진0.jpeg",
+            "label": "2023 STAC 우수상"
+          },
+          {
+            "image": "/images/records/12dev/추다율7.jpeg",
+            "label": "2023 태국 글로벌 인턴십"
           }
         ],
         [
           {
             "image": "/images/records/12dev/황유진0.jpeg",
             "label": "2023 STAC 우수상"
+          },
+          {
+            "image": "/images/records/12dev/황유진1.jpeg",
+            "label": "2023 태국 글로벌 인턴십"
           }
         ]
       ],
@@ -252,6 +280,10 @@
           {
             "image": "/images/records/12design/하지민0.jpeg",
             "label": "2023 디지털 새싹캠프 수료증"
+          },
+          {
+            "image": "/images/records/12dev/황유진0.jpeg",
+            "label": "2023 STAC 우수상"
           }
         ]
       ]
