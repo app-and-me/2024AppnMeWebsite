@@ -38,3 +38,30 @@ button {
     cursor: pointer;
     margin: 0 0 10vh 0;
 }
+
+@media screen and (max-width: 1024px) {
+    main {
+        height: fit-content;
+    }
+
+    #container {
+        margin: 15vw 20px 15vw 20px;
+    }
+
+    #thanks {
+        margin-top: 20vh;
+        font-size: 2rem;
+        line-height: 100%;
+    }
+
+    #interview {
+        font-size: 1.3rem;
+    }
+
+    button {
+        margin-top: 15vh;
+        height: 50px;
+        font-size: 1rem;
+        width: 70%;
+    }
+}
