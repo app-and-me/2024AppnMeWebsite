@@ -53,6 +53,7 @@ img {
 @media screen and (max-width: 1024px) {
 
     #main {
+        margin-top: 80px;
         gap: 35px;
         padding: 0 20px 10vh 20px;
         width: calc(100% - 40px);
@@ -71,5 +72,9 @@ img {
     .major {
         width: 43vw;
         height: 80vw;
+    }
+
+    .sub-title {
+        font-size: 1rem;
     }
 }

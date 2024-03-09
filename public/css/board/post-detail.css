@@ -1,6 +1,7 @@
 #main {
     margin: 180px 0 10vh 0;
     padding: 0 15vw 0 15vw;
+    overflow-x: hidden;
 }
 
 .top-section {
@@ -96,4 +97,35 @@
 .move-title {
     margin: 0 50px;
     color: var(--gray-900);
+}
+
+@media screen and (max-width: 1024px) {
+    #main {
+        margin: 80px 0 10vh 0;
+        padding: 0 20px 0 20px;
+        width: calc(100% - 40px);
+    }
+
+    .title {
+        width: 80%;
+        font-size: 1rem;
+    }
+
+    .icon {
+        font-size: 0.7rem;
+    }
+
+    .text {
+        display: none;
+    }
+
+    .move-title {
+        margin: 0 3vw;
+        font-size: 0.7rem;
+    }
+
+    .main-section {
+        margin: 24px 0 170px;
+    }
+
 }

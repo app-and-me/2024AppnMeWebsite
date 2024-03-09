@@ -135,6 +135,15 @@ textarea {
 }
 
 @media screen and (max-width: 1024px) {
+    #main {
+        margin-top: 80px;
+        width: 100%;
+    }
+
+    .main-title {
+        font-size: 1.4rem;
+    }
+
     #top-section {
         margin: 0 20px 0 20px;
     }
@@ -169,5 +178,9 @@ textarea {
 
     .radio-container {
         gap: 62px;
+    }
+
+    label {
+        font-size: 0.9rem;
     }
 }
