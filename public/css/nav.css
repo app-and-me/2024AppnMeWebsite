@@ -58,6 +58,7 @@
 @media only screen and (max-width: 1024px) {
     #header {
         padding: 0;
+        height: 70px;
     }
 
     #nav {
@@ -100,8 +101,11 @@
 
     .menu-icon {
         display: block;
-        margin: 0 0 0 24px;
-        transform: translateY(26px);
+        position: fixed;
+        width: 24px;
+        height: 24px;
+        top: 20px;
+        left: 20px;
     }
 
     #remove-menu {
@@ -120,5 +124,13 @@
 
     .disable {
         display: none;
+    }
+
+    .logo-img {
+        position: fixed;
+        width: 24px;
+        height: 24px;
+        top: 20px;
+        right: 20px;
     }
 }
