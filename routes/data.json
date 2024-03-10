@@ -89,7 +89,7 @@
         [
           {
             "image": "/images/records/11dev/김선희1.jpeg",
-            "label": "2023 MS Azure 수료증"
+            "label": "2023 MS Azure 수료"
           },
           {
             "image": "/images/records/11dev/김선희0.jpeg",
@@ -266,6 +266,10 @@
           {
             "image": "/images/records/12dev/황유진1.jpeg",
             "label": "2023 태국 글로벌 인턴십"
+          },
+          {
+            "image": "/images/records/12dev/황유진2.png",
+            "label": "2023 MS Azure 수료증"
           }
         ]
       ],
